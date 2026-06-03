@@ -72,9 +72,9 @@
       </div>
     </div>
 
-    <!-- Coluna direita: preview + tipos + tamanhos -->
+    <!-- Coluna direita: preview + tipos + tamanhos + cores -->
     <div class="brand-explorer__preview">
-      <div class="brand-explorer__stage" aria-hidden="true">
+      <div class="brand-explorer__stage" [style.background-color]="selectedBrandBackground()" aria-hidden="true">
         @switch (selectedBrandType()) {
           @case ('square') {
             <creamy-brand-square [brandName]="selectedBrand()" [size]="selectedBrandSize()" />
@@ -100,6 +100,20 @@
             [class.brand-explorer__type-button--selected]="preset.value === selectedBrandType()"
             (click)="selectBrandType(preset.value)"
           >{{ preset.label }}</button>
+        }
+      </div>
+
+      <div class="brand-explorer__colors" role="group" aria-label="Cor de fundo">
+        @for (swatch of brandBackgroundSwatches; track swatch.value) {
+          <button
+            type="button"
+            class="brand-explorer__swatch"
+            [class.brand-explorer__swatch--selected]="swatch.value === selectedBrandBackground()"
+            [style.background-color]="swatch.value"
+            [attr.aria-label]="swatch.label"
+            [title]="swatch.label"
+            (click)="selectBrandBackground(swatch.value)"
+          ></button>
         }
       </div>
 

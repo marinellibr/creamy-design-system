@@ -30,7 +30,17 @@ export class BrandPageComponent {
   readonly selectedBrand = signal<string>('visa');
   readonly selectedBrandType = signal<BrandType>('square');
   readonly selectedBrandSize = signal<BrandSize>('medium');
+  readonly selectedBrandBackground = signal<string>('#ffffff');
   readonly brandInputFocused = signal(false);
+
+  readonly brandBackgroundSwatches: { label: string; value: string }[] = [
+    { label: 'White', value: '#ffffff' },
+    { label: 'Light Gray', value: '#f5f5f5' },
+    { label: 'Gray', value: '#e9e9e9' },
+    { label: 'Primary', value: 'var(--primary-base)' },
+    { label: 'Dark', value: '#1f1f1f' },
+    { label: 'Transparent', value: 'transparent' },
+  ];
 
   readonly brandSizePresets: { label: string; value: BrandSize }[] = [
     { label: 'Small', value: 'small' },
@@ -102,6 +112,10 @@ export class BrandPageComponent {
 
   selectBrandSize(size: BrandSize): void {
     this.selectedBrandSize.set(size);
+  }
+
+  selectBrandBackground(color: string): void {
+    this.selectedBrandBackground.set(color);
   }
 
   preserveFocus(event: Event): void {
