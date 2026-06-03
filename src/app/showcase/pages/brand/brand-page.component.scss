@@ -1,0 +1,15 @@
+:host {
+  display: block;
+}
+
+.brands-section {
+  // Styles inherited from global styles.scss
+}
+
+@media (max-width: 720px) {
+  :host ::ng-deep {
+    .brand-explorer {
+      grid-template-columns: 1fr;
+    }
+  }
+}

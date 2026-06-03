@@ -1,0 +1,134 @@
+<ds-page-header label="Brand" selector="creamy-brand-*" />
+
+<section class="component-section brands-section">
+  <p class="brands-intro">
+    Componentes para exibir marcas consumidas do
+    <a href="https://github.com/marinellibr/creamy-kit-resources/tree/main/brands" target="_blank" rel="noopener">creamy-kit-resources</a>
+    ({{ allBrands.length }} marcas). Digite o nome para filtrar, escolha uma
+    marca e selecione o tipo e tamanho. Os snippets atualizam em tempo real.
+  </p>
+
+  <div class="brand-explorer">
+    <!-- Coluna esquerda: busca + sugestões + snippets -->
+    <div class="brand-explorer__search">
+      <label class="brand-explorer__label" for="brand-search-input">Buscar marca</label>
+      <div class="brand-explorer__field">
+        <input
+          id="brand-search-input"
+          class="brand-explorer__input"
+          type="text"
+          placeholder="Ex.: visa, mastercard, pix…"
+          autocomplete="off"
+          spellcheck="false"
+          [value]="brandQuery()"
+          (input)="onBrandQueryChange($any($event.target).value)"
+          (focus)="onBrandInputFocus()"
+          (blur)="onBrandInputBlur()"
+        />
+        @if (brandQuery()) {
+          <button
+            type="button"
+            class="brand-explorer__clear"
+            aria-label="Limpar busca"
+            (mousedown)="preserveFocus($event)"
+            (click)="onBrandQueryChange('')"
+          >×</button>
+        }
+      </div>
+
+      @if (brandInputFocused()) {
+        <ul class="brand-explorer__suggestions" role="listbox">
+          @if (brandSuggestions().length === 0) {
+            <li class="brand-explorer__empty">Nenhuma marca encontrada.</li>
+          } @else {
+            @for (name of brandSuggestions(); track name) {
+              <li
+                class="brand-explorer__suggestion"
+                role="option"
+                [class.brand-explorer__suggestion--selected]="name === selectedBrand()"
+                (mousedown)="preserveFocus($event)"
+                (click)="selectBrand(name)"
+              >
+                <span class="brand-explorer__suggestion-name">{{ name }}</span>
+              </li>
+            }
+            @if (brandMatchCount() > brandSuggestions().length) {
+              <li class="brand-explorer__more">
+                +{{ brandMatchCount() - brandSuggestions().length }} resultado{{ brandMatchCount() - brandSuggestions().length === 1 ? '' : 's' }} a mais
+              </li>
+            }
+          }
+        </ul>
+      }
+
+      <div class="brand-explorer__snippet">
+        <span class="brand-explorer__snippet-label">HTML</span>
+        <pre class="code-snippet brand-explorer__snippet-code"><code>{{ brandHtmlSnippet() }}</code></pre>
+      </div>
+
+      <div class="brand-explorer__snippet">
+        <span class="brand-explorer__snippet-label">TypeScript (import)</span>
+        <pre class="code-snippet brand-explorer__snippet-code"><code>{{ brandTsSnippet }}</code></pre>
+      </div>
+    </div>
+
+    <!-- Coluna direita: preview + tipos + tamanhos -->
+    <div class="brand-explorer__preview">
+      <div class="brand-explorer__stage" aria-hidden="true">
+        @switch (selectedBrandType()) {
+          @case ('square') {
+            <creamy-brand-square [brandName]="selectedBrand()" [size]="selectedBrandSize()" />
+          }
+          @case ('horizontal') {
+            <creamy-brand-horizontal [brandName]="selectedBrand()" [size]="selectedBrandSize()" />
+          }
+          @case ('cardholder') {
+            <creamy-brand-cardholder [brandName]="selectedBrand()" />
+          }
+        }
+      </div>
+
+      <div class="brand-explorer__meta">
+        <span class="brand-explorer__name">{{ selectedBrand() }}</span>
+      </div>
+
+      <div class="brand-explorer__types" role="group" aria-label="Tipo de marca">
+        @for (preset of brandTypePresets; track preset.value) {
+          <button
+            type="button"
+            class="brand-explorer__type-button"
+            [class.brand-explorer__type-button--selected]="preset.value === selectedBrandType()"
+            (click)="selectBrandType(preset.value)"
+          >{{ preset.label }}</button>
+        }
+      </div>
+
+      @if (selectedBrandType() !== 'cardholder') {
+        <div class="brand-explorer__sizes" role="group" aria-label="Tamanho da marca">
+          @for (preset of brandSizePresets; track preset.value) {
+            <button
+              type="button"
+              class="brand-explorer__size-preset"
+              [class.brand-explorer__size-preset--selected]="preset.value === selectedBrandSize()"
+              (click)="selectBrandSize(preset.value)"
+            >{{ preset.label }}</button>
+          }
+        </div>
+      }
+    </div>
+  </div>
+
+  <div class="documentation">
+    <div class="doc-card">
+      <h3>Como usar</h3>
+      <ul>
+        <li>Importe <code>BrandSquareComponent</code>, <code>BrandHorizontalComponent</code> ou <code>BrandCardholderComponent</code> de <code>creamy-kit</code>.</li>
+        <li>Passe <code>brandName</code> (string, obrigatório) e <code>size</code> (small/medium/large, padrão: medium).</li>
+        <li>Os componentes carregam os SVGs dinamicamente do GitHub.</li>
+        <li>Catálogo completo no README do
+          <a href="https://github.com/marinellibr/creamy-kit-resources" target="_blank" rel="noopener">creamy-kit-resources</a>.
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

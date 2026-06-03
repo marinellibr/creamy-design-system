@@ -39,7 +39,7 @@ export const COMPONENTS: readonly ComponentEntry[] = [
   { slug: 'card', label: 'Card', selector: 'kit-card', group: 'Geral' },
   { slug: 'divider', label: 'Divider', selector: 'kit-divider', group: 'Geral' },
   { slug: 'icon', label: 'Icon', selector: 'kit-icon', group: 'Geral' },
-  { slug: 'brand', label: 'Brand', selector: 'kit-brand', group: 'Geral', wip: true },
+  { slug: 'brand', label: 'Brand', selector: 'creamy-brand-square · -horizontal · -cardholder', group: 'Geral' },
 
   // -------------------------- Formulários --------------------------
   { slug: 'input', label: 'Input', selector: 'kit-input', group: 'Formulários' },
