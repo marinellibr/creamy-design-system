@@ -1,7 +1,7 @@
-<ds-page-header label="Banner" selector="kit-banner" [code]="snippet" />
+<ds-page-header label="Banner" selector="kit-banner · kit-banner-tag · kit-banner-card" [code]="snippet" />
 
 <section class="component-section">
-  <h3 class="variant-label">type="content" · size</h3>
+  <h3 class="variant-label">kit-banner · size</h3>
   <div class="banner-stack">
     <kit-banner
       size="small"
@@ -34,10 +34,9 @@
     />
   </div>
 
-  <h3 class="variant-label">type="tag"</h3>
+  <h3 class="variant-label">kit-banner-tag</h3>
   <div class="banner-stack">
-    <kit-banner
-      type="tag"
+    <kit-banner-tag
       size="medium"
       title="Saldo disponível"
       description="Conta corrente"
@@ -46,8 +45,7 @@
       tagValue="R$ 1.250,00"
       tagLabel="atualizado hoje"
     />
-    <kit-banner
-      type="tag"
+    <kit-banner-tag
       size="medium"
       title="Banner tag desabilitado"
       description="Conta bloqueada"
@@ -59,10 +57,9 @@
     />
   </div>
 
-  <h3 class="variant-label">type="card"</h3>
+  <h3 class="variant-label">kit-banner-card</h3>
   <div class="banner-stack">
-    <kit-banner
-      type="card"
+    <kit-banner-card
       size="medium"
       title="Cartão de crédito"
       description="Ícone à direita também via kit-icon."
@@ -70,8 +67,7 @@
       iconName="card_payment_method_base"
       trailingIconName="reload_base"
     />
-    <kit-banner
-      type="card"
+    <kit-banner-card
       size="medium"
       title="Cartão desabilitado"
       description="Ícones também ficam cinza no disabled."
@@ -84,12 +80,11 @@
 
   <div class="documentation">
     <div class="doc-card">
-      <h3>type</h3>
-      <p><strong>Type:</strong> <code>'content' | 'tag' | 'card'</code> · <strong>Default:</strong> <code>'content'</code></p>
+      <h3>Três componentes</h3>
       <ul>
-        <li><code>content</code> — faixa de largura total, com chevron à direita</li>
-        <li><code>tag</code> — como content, mas com valor + label à direita</li>
-        <li><code>card</code> — como content, mas com ícone à direita (<code>trailingIconName</code>)</li>
+        <li><code>kit-banner</code> — faixa com chevron à direita</li>
+        <li><code>kit-banner-tag</code> — valor + label à direita (<code>tagValue</code> / <code>tagLabel</code>)</li>
+        <li><code>kit-banner-card</code> — ícone à direita (<code>trailingIconName</code>)</li>
       </ul>
     </div>
     <div class="doc-card">

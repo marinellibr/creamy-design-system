@@ -56,21 +56,21 @@ export const COMPONENTS: readonly ComponentEntry[] = [
   { slug: 'switch', label: 'Switch', selector: 'kit-switch', group: 'Formulários', wip: true },
 
   // ----------------------------- Feedback -----------------------------
-  { slug: 'alert', label: 'Alert', selector: 'kit-alert', group: 'Feedback' },
-  { slug: 'banner', label: 'Banner', selector: 'kit-banner', group: 'Feedback' },
+  { slug: 'alert', label: 'Alert', selector: 'kit-alert · kit-snackbar', group: 'Feedback' },
+  { slug: 'banner', label: 'Banner', selector: 'kit-banner · -tag · -card', group: 'Feedback' },
   { slug: 'loading', label: 'Loading', selector: 'kit-loading', group: 'Feedback', wip: true },
   { slug: 'progress', label: 'Progress', selector: 'kit-progress', group: 'Feedback', wip: true },
   { slug: 'tooltip', label: 'Tooltip', selector: 'kit-tooltip', group: 'Feedback', wip: true },
 
   // ---------------------------- Navegação ----------------------------
   { slug: 'breadcrumb', label: 'Breadcrumb', selector: 'kit-breadcrumb', group: 'Navegação' },
-  { slug: 'header', label: 'Header', selector: 'kit-header', group: 'Navegação' },
+  { slug: 'header', label: 'Header', selector: 'kit-header-search · …', group: 'Navegação' },
   { slug: 'pagination', label: 'Pagination', selector: 'kit-pagination', group: 'Navegação', wip: true },
   { slug: 'tab-bar', label: 'TabBar', selector: 'kit-tab-bar', group: 'Navegação', wip: true },
   { slug: 'tabs', label: 'Tabs', selector: 'kit-tabs', group: 'Navegação', wip: true },
 
   // ------------------------ Exibição de dados ------------------------
-  { slug: 'avatar', label: 'Avatar', selector: 'kit-avatar', group: 'Exibição de dados' },
+  { slug: 'avatar', label: 'Avatar', selector: 'kit-avatar-icon · -text · -image', group: 'Exibição de dados' },
   { slug: 'image', label: 'Image', selector: 'kit-image', group: 'Exibição de dados' },
   { slug: 'list', label: 'List', selector: 'kit-list', group: 'Exibição de dados', wip: true },
   { slug: 'product-card', label: 'ProductCard', selector: 'kit-product-card', group: 'Exibição de dados', wip: true },

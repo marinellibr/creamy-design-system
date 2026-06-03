@@ -1,11 +1,11 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { AlertComponent } from 'creamy-kit';
+import { AlertComponent, SnackbarComponent } from 'creamy-kit';
 import { PageHeaderComponent } from '../../shared/page-header.component';
 
 @Component({
   selector: 'app-alert-page',
   standalone: true,
-  imports: [PageHeaderComponent, AlertComponent],
+  imports: [PageHeaderComponent, AlertComponent, SnackbarComponent],
   templateUrl: './alert-page.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -18,7 +18,7 @@ export class AlertPageComponent {
   Sua operação foi concluída.
 </kit-alert>
 
-<kit-alert variant="snackbar" feedback="error">
+<kit-snackbar feedback="error">
   Não foi possível salvar.
-</kit-alert>`;
+</kit-snackbar>`;
 }

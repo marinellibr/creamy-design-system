@@ -1,21 +1,30 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { AvatarComponent } from 'creamy-kit';
+import {
+  AvatarIconComponent,
+  AvatarImageComponent,
+  AvatarTextComponent,
+} from 'creamy-kit';
 import { PageHeaderComponent } from '../../shared/page-header.component';
 
 @Component({
   selector: 'app-avatar-page',
   standalone: true,
-  imports: [PageHeaderComponent, AvatarComponent],
+  imports: [
+    PageHeaderComponent,
+    AvatarIconComponent,
+    AvatarTextComponent,
+    AvatarImageComponent,
+  ],
   templateUrl: './avatar-page.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AvatarPageComponent {
-  protected readonly snippet = `<kit-avatar size="large" contrast="dark" variant="text">LM</kit-avatar>
+  protected readonly snippet = `<kit-avatar-icon name="user_base" contrast="dark" size="large" />
 
-<kit-avatar variant="image">
-  <img src="avatar.jpg" alt="Luiz" />
-</kit-avatar>
+<kit-avatar-text text="LM" contrast="variant" size="medium" />
+
+<kit-avatar-image src="avatar.jpg" alt="Luiz" size="large" />
 
 <!-- anel de progresso -->
-<kit-avatar variant="text" [percentage]="75">LM</kit-avatar>`;
+<kit-avatar-text text="LM" [percentage]="75" />`;
 }

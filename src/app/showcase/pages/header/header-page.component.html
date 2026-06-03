@@ -1,86 +1,85 @@
-<ds-page-header label="Header" selector="kit-header" [code]="snippet" />
+<ds-page-header label="Header" selector="kit-header-search · -title · -large-title · -profile" [code]="snippet" />
 
 <section class="component-section">
   <div class="header-stack">
     <div class="header-demo">
       <span class="variant-label">search · basic</span>
-      <kit-header placeholder="O que sua pele procura?" />
+      <kit-header-search placeholder="O que sua pele procura?" />
     </div>
 
     <div class="header-demo">
       <span class="variant-label">search · back</span>
-      <kit-header type="search" back placeholder="O que sua pele procura?" />
+      <kit-header-search back placeholder="O que sua pele procura?" />
     </div>
 
     <div class="header-demo">
       <span class="variant-label">search · avatar</span>
-      <kit-header type="search" placeholder="O que sua pele procura?" avatarSrc="https://i.pravatar.cc/96?img=47" />
+      <kit-header-search placeholder="O que sua pele procura?" avatarSrc="https://i.pravatar.cc/96?img=47" />
     </div>
 
     <div class="header-demo">
       <span class="variant-label">title · brand</span>
-      <kit-header type="title" back title="Title">
+      <kit-header-title back title="Title">
         <button actions class="demo-action" aria-label="ação"></button>
         <button actions class="demo-action" aria-label="ação"></button>
         <button actions class="demo-action" aria-label="ação"></button>
-      </kit-header>
+      </kit-header-title>
     </div>
 
     <div class="header-demo">
       <span class="variant-label">title · light</span>
-      <kit-header type="title" theme="light" back title="Title">
+      <kit-header-title theme="light" back title="Title">
         <button actions class="demo-action" aria-label="ação"></button>
         <button actions class="demo-action" aria-label="ação"></button>
         <button actions class="demo-action" aria-label="ação"></button>
-      </kit-header>
+      </kit-header-title>
     </div>
 
     <div class="header-demo">
       <span class="variant-label">large-title · brand</span>
-      <kit-header type="large-title" back subtitle="Small title" title="Large title">
+      <kit-header-large-title back subtitle="Small title" title="Large title">
         <button actions class="demo-action" aria-label="ação"></button>
         <button actions class="demo-action" aria-label="ação"></button>
         <button actions class="demo-action" aria-label="ação"></button>
-      </kit-header>
+      </kit-header-large-title>
     </div>
 
     <div class="header-demo">
       <span class="variant-label">large-title · light</span>
-      <kit-header type="large-title" theme="light" back subtitle="Small title" title="Large title">
+      <kit-header-large-title theme="light" back subtitle="Small title" title="Large title">
         <button actions class="demo-action" aria-label="ação"></button>
         <button actions class="demo-action" aria-label="ação"></button>
         <button actions class="demo-action" aria-label="ação"></button>
-      </kit-header>
+      </kit-header-large-title>
     </div>
 
     <div class="header-demo">
       <span class="variant-label">profile · brand</span>
-      <kit-header type="profile" title="User name" subtitle="Sub-text" avatarSrc="https://i.pravatar.cc/96?img=47">
+      <kit-header-profile title="User name" subtitle="Sub-text" avatarSrc="https://i.pravatar.cc/96?img=47">
         <button actions class="demo-action" aria-label="ação"></button>
         <button actions class="demo-action" aria-label="ação"></button>
         <button actions class="demo-action" aria-label="ação"></button>
-      </kit-header>
+      </kit-header-profile>
     </div>
 
     <div class="header-demo">
       <span class="variant-label">profile · light</span>
-      <kit-header type="profile" theme="light" title="User name" subtitle="Sub-text" avatarSrc="https://i.pravatar.cc/96?img=47">
+      <kit-header-profile theme="light" title="User name" subtitle="Sub-text" avatarSrc="https://i.pravatar.cc/96?img=47">
         <button actions class="demo-action" aria-label="ação"></button>
         <button actions class="demo-action" aria-label="ação"></button>
         <button actions class="demo-action" aria-label="ação"></button>
-      </kit-header>
+      </kit-header-profile>
     </div>
   </div>
 
   <div class="documentation">
     <div class="doc-card">
-      <h3>type</h3>
-      <p><strong>Type:</strong> <code>'search' | 'title' | 'large-title' | 'profile'</code></p>
+      <h3>Quatro componentes</h3>
       <ul>
-        <li><code>search</code> — busca (<code>kit-search</code>); leading = <code>[back]</code> ou <code>avatarSrc</code></li>
-        <li><code>title</code> — "Title" em linha única</li>
-        <li><code>large-title</code> — <code>subtitle</code> (small) + <code>title</code> (large) abaixo</li>
-        <li><code>profile</code> — avatar + <code>title</code> (nome) + <code>subtitle</code></li>
+        <li><code>kit-header-search</code> — busca (<code>kit-search</code>); leading = <code>[back]</code> ou <code>avatarSrc</code></li>
+        <li><code>kit-header-title</code> — "Title" em linha única</li>
+        <li><code>kit-header-large-title</code> — <code>subtitle</code> (small) + <code>title</code> (large) abaixo</li>
+        <li><code>kit-header-profile</code> — avatar + <code>title</code> (nome) + <code>subtitle</code></li>
       </ul>
     </div>
     <div class="doc-card">
