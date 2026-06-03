@@ -1,0 +1,32 @@
+:host {
+  display: block;
+  min-height: 100vh;
+}
+
+.ds-header {
+  background-color: var(--primary-base);
+  color: var(--primary-contrast);
+
+  &__inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1.25rem 2rem;
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+  }
+
+  &__logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+
+  &__subtitle {
+    font-size: 0.875rem;
+    opacity: 0.85;
+  }
+}
+
+.ds-main {
+  display: block;
+}

@@ -1,0 +1,76 @@
+<ds-page-header label="Alert" selector="kit-alert" [code]="snippet" />
+
+<section class="component-section">
+  <h3 class="variant-label">variant="alert"</h3>
+  <div class="alert-stack">
+    <kit-alert
+      feedback="information"
+      title="Nova atualização disponível"
+      linkText="Saiba mais"
+      linkHref="/novidades"
+    >
+      Confira as novidades desta versão do produto.
+    </kit-alert>
+    <kit-alert
+      feedback="success"
+      title="Cadastro concluído"
+      linkText="Ver perfil"
+      linkHref="/perfil"
+    >
+      Sua conta foi criada com sucesso.
+    </kit-alert>
+    <kit-alert
+      feedback="error"
+      title="Falha ao salvar"
+      linkText="Tentar novamente"
+      linkHref="/retry"
+    >
+      Não foi possível salvar os dados.
+    </kit-alert>
+  </div>
+
+  <h3 class="variant-label">variant="snackbar"</h3>
+  <div class="snackbar-row">
+    <kit-alert variant="snackbar" feedback="information">Sincronizando…</kit-alert>
+    <kit-alert variant="snackbar" feedback="success">Tudo certo!</kit-alert>
+    <kit-alert variant="snackbar" feedback="error">Falha ao enviar</kit-alert>
+    <kit-alert variant="snackbar" feedback="warning">Atenção</kit-alert>
+    <kit-alert variant="snackbar" feedback="black">Black</kit-alert>
+    <kit-alert variant="snackbar" feedback="white">White</kit-alert>
+  </div>
+
+  <div class="documentation">
+    <div class="doc-card">
+      <h3>variant</h3>
+      <p><strong>Type:</strong> <code>'alert' | 'snackbar'</code></p>
+      <p><strong>Default:</strong> <code>'alert'</code></p>
+      <ul>
+        <li><code>alert</code> — caixa de aviso fixa, inline no fluxo</li>
+        <li><code>snackbar</code> — notificação compacta e flutuante (toast)</li>
+      </ul>
+    </div>
+
+    <div class="doc-card">
+      <h3>feedback</h3>
+      <p><strong>Default:</strong> <code>'information'</code></p>
+      <p><strong>alert:</strong> <code>'information' | 'success' | 'error'</code></p>
+      <p><strong>snackbar:</strong> <code>'information' | 'success' | 'error' | 'black' | 'white'</code></p>
+    </div>
+
+    <div class="doc-card">
+      <h3>title · linkText · linkHref</h3>
+      <p>
+        Conteúdo da variação <code>alert</code>. O <code>title</code> aparece em
+        destaque, o corpo é projetado via <code>&lt;ng-content&gt;</code> e o link
+        só é renderizado quando <code>linkHref</code> é informado. Ignorados no
+        <code>snackbar</code>.
+      </p>
+    </div>
+
+    <div class="doc-card">
+      <h3>(closed)</h3>
+      <p><strong>Type:</strong> <code>EventEmitter&lt;void&gt;</code></p>
+      <p>Emitido ao fechar o alerta pelo botão de fechar (apenas na variação <code>alert</code>).</p>
+    </div>
+  </div>
+</section>

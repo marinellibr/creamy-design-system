@@ -1,0 +1,26 @@
+<ds-page-header label="Code" selector="kit-code" [code]="snippet" />
+
+<section class="component-section">
+  <h3 class="variant-label">código de verificação</h3>
+  <div class="inputs-stack">
+    <kit-code title="Código (6 dígitos)" [length]="6" />
+    <kit-code title="Código (4 dígitos)" [length]="4" />
+    <kit-code title="Com erro" [length]="6" [error]="true" />
+  </div>
+
+  <div class="documentation">
+    <div class="doc-card">
+      <h3>Parâmetros</h3>
+      <ul>
+        <li><code>[length]</code> — <code>4 | 6</code> campos (32×48px)</li>
+        <li><code>title</code> — mesmo título do Input Text</li>
+        <li><code>[error]</code> — borda dos campos em Feedback/error</li>
+      </ul>
+      <p>
+        Um caractere por campo, com avanço automático de foco ao digitar (e
+        volta no Backspace). Suporta colar o código inteiro. Implementa
+        <code>ControlValueAccessor</code>.
+      </p>
+    </div>
+  </div>
+</section>

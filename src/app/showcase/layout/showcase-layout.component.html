@@ -1,0 +1,53 @@
+<div class="ds-shell">
+  <aside class="ds-sidebar">
+    <a class="ds-sidebar__brand" routerLink="/" routerLinkActive="is-active" [routerLinkActiveOptions]="{ exact: true }">
+      <span class="ds-sidebar__logo">🍦 Creamy Kit</span>
+      <span class="ds-sidebar__tagline">Design System</span>
+    </a>
+
+    <div class="ds-sidebar__search">
+      <input
+        type="text"
+        placeholder="Filtrar componentes…"
+        autocomplete="off"
+        spellcheck="false"
+        [value]="filter()"
+        (input)="onFilter($any($event.target).value)"
+      />
+    </div>
+
+    <nav class="ds-nav">
+      @for (group of groups(); track group.name) {
+        <div class="ds-nav__group">
+          <span class="ds-nav__group-title">{{ group.name }}</span>
+          <ul class="ds-nav__list">
+            @for (item of group.items; track item.slug) {
+              <li>
+                <a
+                  class="ds-nav__link"
+                  [routerLink]="['/components', item.slug]"
+                  routerLinkActive="is-active"
+                >
+                  <span class="ds-nav__label">{{ item.label }}</span>
+                  @if (item.wip) {
+                    <span class="ds-nav__badge" title="Sem implementação">WIP</span>
+                  }
+                </a>
+              </li>
+            }
+          </ul>
+        </div>
+      } @empty {
+        <p class="ds-nav__empty">Nenhum componente encontrado.</p>
+      }
+    </nav>
+
+    <div class="ds-sidebar__footer">
+      {{ readyCount }} de {{ totalCount }} implementados
+    </div>
+  </aside>
+
+  <main class="ds-content">
+    <router-outlet />
+  </main>
+</div>

@@ -1,0 +1,22 @@
+<ds-page-header label="Textbox" selector="kit-textbox" [code]="snippet" />
+
+<section class="component-section">
+  <h3 class="variant-label">variant="default"</h3>
+  <div class="inputs-stack">
+    <kit-textbox title="Comentário" placeholder="Escreva aqui…" helper="Conte o que achou" [maxLength]="120" />
+    <kit-textbox title="Sem contador" placeholder="Texto livre" helper="Sem limite de caracteres" />
+    <kit-textbox title="Desabilitado" placeholder="Não editável" helper="Campo bloqueado" [maxLength]="200" [disabled]="true" />
+    <kit-textbox title="Com erro" placeholder="Descreva o problema" helper="Campo obrigatório" [maxLength]="80" [error]="true" />
+  </div>
+
+  <div class="documentation">
+    <div class="doc-card">
+      <h3>Parâmetros</h3>
+      <ul>
+        <li>Iguais ao Input: <code>placeholder</code>, <code>title</code>, <code>helper</code>, <code>[disabled]</code>, <code>[error]</code>, <code>[icon]</code></li>
+        <li><code>[maxLength]</code> — limita o texto e exibe um contador <code>atual/máx</code> à direita do helper</li>
+      </ul>
+      <p>Multi-linha (<code>min-height: 80px</code>). Implementa <code>ControlValueAccessor</code>.</p>
+    </div>
+  </div>
+</section>

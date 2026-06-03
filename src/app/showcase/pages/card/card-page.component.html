@@ -1,0 +1,32 @@
+<ds-page-header label="Card" selector="kit-card" [code]="snippet" />
+
+<section class="component-section">
+  <div class="card-stack">
+    <kit-card>
+      <h3 style="margin: 0 0 0.5rem">Card de conteúdo</h3>
+      <p style="margin: 0">
+        Contêiner de largura total (width 100%), padding 20px (vertical) / 24px
+        (horizontal), border-radius 24px e borda 1px sólida em border-medium. O
+        conteúdo é projetado via <code>&lt;ng-content&gt;</code>.
+      </p>
+    </kit-card>
+
+    <kit-card>
+      <p style="margin: 0">
+        Outro card — note que o padding não afeta a largura total (box-sizing:
+        border-box).
+      </p>
+    </kit-card>
+  </div>
+
+  <div class="documentation">
+    <div class="doc-card">
+      <h3>Card</h3>
+      <p>
+        Contêiner de largura total. Padding 20px×24px, border-radius 24px, borda
+        1px sólida <code>--border-medium</code>. Conteúdo via
+        <code>&lt;ng-content&gt;</code>.
+      </p>
+    </div>
+  </div>
+</section>

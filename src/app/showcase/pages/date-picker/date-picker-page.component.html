@@ -1,0 +1,30 @@
+<ds-page-header label="DatePicker" selector="kit-date-picker" [code]="snippet" />
+
+<section class="component-section">
+  <div class="calendar-row">
+    <kit-date-picker
+      title="Selecione a data"
+      description="Description"
+      infoText="Texto informativo, alerta ou dica sobre a escolha da data"
+      [(ngModel)]="calendarDate"
+    />
+  </div>
+
+  <div class="documentation">
+    <div class="doc-card">
+      <h3>DatePicker</h3>
+      <p>
+        Diálogo que <strong>consome o <code>kit-calendar</code></strong>:
+        cabeçalho (título + descrição + fechar), texto informativo no rodapé e
+        ações <code>Confirmar</code>/<code>Cancelar</code> (via
+        <code>kit-button</code>).
+      </p>
+      <ul>
+        <li><code>title</code> · <code>description</code> · <code>infoText</code></li>
+        <li><code>confirmLabel</code> · <code>cancelLabel</code></li>
+        <li>Saídas: <code>(confirm)</code> (Date), <code>(cancel)</code>, <code>(closed)</code></li>
+      </ul>
+      <p>Implementa <code>ControlValueAccessor</code> (valor = <code>Date</code>).</p>
+    </div>
+  </div>
+</section>

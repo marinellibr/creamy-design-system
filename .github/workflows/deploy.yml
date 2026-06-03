@@ -1,0 +1,79 @@
+name: Deploy to GitHub Pages
+
+# Publica o creamy-design-system no GitHub Pages a cada push na branch padrão.
+# Como o site depende da biblioteca `creamy-kit` (repo creamy-kit-angular), o
+# job faz checkout dos DOIS repositórios, builda a lib e só então o site.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Evita deploys concorrentes sobrescrevendo um ao outro.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # 1) Este repositório (design system) → pasta creamy-design-system/
+      - name: Checkout design-system
+        uses: actions/checkout@v4
+        with:
+          path: creamy-design-system
+
+      # 2) A biblioteca, no MESMO owner → pasta irmã creamy-kit-angular/
+      #    (preserva o caminho relativo file:../creamy-kit-angular/dist/creamy-kit)
+      #    Se o repo da lib for PRIVADO, gere um PAT e adicione:
+      #      token: ${{ secrets.LIB_REPO_TOKEN }}
+      - name: Checkout creamy-kit-angular (lib)
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository_owner }}/creamy-kit-angular
+          path: creamy-kit-angular
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # 3) Builda a biblioteca → gera creamy-kit-angular/dist/creamy-kit
+      - name: Build creamy-kit (library)
+        working-directory: creamy-kit-angular
+        run: |
+          npm ci
+          npx ng build creamy-kit
+
+      # 4) Builda o site com base-href = /<nome-do-repo>/ (exigência do Pages)
+      - name: Build design-system
+        working-directory: creamy-design-system
+        run: |
+          npm ci
+          npx ng build --base-href "/${{ github.event.repository.name }}/"
+
+      # 5) Fallback de SPA: Pages não tem rewrite, então 404 → index.html
+      - name: SPA 404 fallback
+        run: cp creamy-design-system/dist/creamy-design-system/index.html creamy-design-system/dist/creamy-design-system/404.html
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: creamy-design-system/dist/creamy-design-system
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

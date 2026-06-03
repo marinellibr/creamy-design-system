@@ -1,0 +1,116 @@
+<ds-page-header label="Banner" selector="kit-banner" [code]="snippet" />
+
+<section class="component-section">
+  <h3 class="variant-label">type="content" · size</h3>
+  <div class="banner-stack">
+    <kit-banner
+      size="small"
+      title="Banner pequeno"
+      description="Ícone de 16px com título e descrição."
+      iconColor="--feedbacks-information"
+      iconName="information_variant"
+    />
+    <kit-banner
+      size="medium"
+      title="Banner médio"
+      description="Ícone de 24px (padrão) — cor success-variant-2."
+      iconColor="--feedbacks-success-variant-2"
+      iconName="check_base"
+    />
+    <kit-banner
+      size="large"
+      title="Banner grande"
+      description="Ícone de 32px — cor de erro."
+      iconColor="--feedbacks-error"
+      iconName="error_circle_variant"
+    />
+    <kit-banner
+      size="medium"
+      title="Banner desabilitado"
+      description="Fundo Background/variant-2, ícone e textos em Action/disabled/variant."
+      iconColor="--feedbacks-success-variant-2"
+      iconName="information_variant"
+      [disabled]="true"
+    />
+  </div>
+
+  <h3 class="variant-label">type="tag"</h3>
+  <div class="banner-stack">
+    <kit-banner
+      type="tag"
+      size="medium"
+      title="Saldo disponível"
+      description="Conta corrente"
+      iconColor="--feedbacks-success-variant-2"
+      iconName="wallet_base"
+      tagValue="R$ 1.250,00"
+      tagLabel="atualizado hoje"
+    />
+    <kit-banner
+      type="tag"
+      size="medium"
+      title="Banner tag desabilitado"
+      description="Conta bloqueada"
+      iconColor="--feedbacks-information"
+      iconName="wallet_base"
+      tagValue="R$ 0,00"
+      tagLabel="indisponível"
+      [disabled]="true"
+    />
+  </div>
+
+  <h3 class="variant-label">type="card"</h3>
+  <div class="banner-stack">
+    <kit-banner
+      type="card"
+      size="medium"
+      title="Cartão de crédito"
+      description="Ícone à direita também via kit-icon."
+      iconColor="--feedbacks-information"
+      iconName="card_payment_method_base"
+      trailingIconName="reload_base"
+    />
+    <kit-banner
+      type="card"
+      size="medium"
+      title="Cartão desabilitado"
+      description="Ícones também ficam cinza no disabled."
+      iconColor="--feedbacks-success-variant-2"
+      iconName="card_payment_method_base"
+      trailingIconName="reload_base"
+      [disabled]="true"
+    />
+  </div>
+
+  <div class="documentation">
+    <div class="doc-card">
+      <h3>type</h3>
+      <p><strong>Type:</strong> <code>'content' | 'tag' | 'card'</code> · <strong>Default:</strong> <code>'content'</code></p>
+      <ul>
+        <li><code>content</code> — faixa de largura total, com chevron à direita</li>
+        <li><code>tag</code> — como content, mas com valor + label à direita</li>
+        <li><code>card</code> — como content, mas com ícone à direita (<code>trailingIconName</code>)</li>
+      </ul>
+    </div>
+    <div class="doc-card">
+      <h3>size</h3>
+      <p><strong>Type:</strong> <code>'small' | 'medium' | 'large'</code> · <strong>Default:</strong> <code>'medium'</code></p>
+      <ul>
+        <li><code>small</code> — ícone 16px · <code>medium</code> — 24px · <code>large</code> — 32px</li>
+      </ul>
+    </div>
+    <div class="doc-card">
+      <h3>iconName · iconColor</h3>
+      <p>
+        <code>iconName</code> renderiza um <code>kit-icon</code> do
+        creamy-kit-resources. <code>iconColor</code> é o token de cor aplicado
+        (ex.: <code>--feedbacks-success-variant-2</code>).
+      </p>
+    </div>
+    <div class="doc-card">
+      <h3>disabled</h3>
+      <p><strong>Type:</strong> <code>boolean</code> · <strong>Default:</strong> <code>false</code></p>
+      <p>Quando <code>true</code>, fundo Background/variant-2 e ícone/textos em Action/disabled/variant.</p>
+    </div>
+  </div>
+</section>

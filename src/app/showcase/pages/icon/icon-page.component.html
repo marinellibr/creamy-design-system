@@ -1,0 +1,140 @@
+<ds-page-header label="Icon" selector="kit-icon" />
+
+<section class="component-section icons-section">
+  <p class="icons-intro">
+    Catálogo consumido direto do
+    <a href="https://github.com/marinellibr/creamy-kit-resources/tree/main/icons" target="_blank" rel="noopener">creamy-kit-resources</a>
+    ({{ iconNames.length }} ícones). Digite o nome para filtrar, escolha um
+    ícone e troque a cor/tamanho. Os snippets atualizam em tempo real.
+  </p>
+
+  <div class="icon-explorer">
+    <!-- Coluna esquerda: busca + sugestões + snippets -->
+    <div class="icon-explorer__search">
+      <label class="icon-explorer__label" for="icon-search-input">Buscar ícone</label>
+      <div class="icon-explorer__field">
+        <input
+          id="icon-search-input"
+          class="icon-explorer__input"
+          type="text"
+          placeholder="Ex.: arrow, search, mic, lock…"
+          autocomplete="off"
+          spellcheck="false"
+          [value]="iconQuery()"
+          (input)="onIconQueryChange($any($event.target).value)"
+          (focus)="onIconInputFocus()"
+          (blur)="onIconInputBlur()"
+        />
+        @if (iconQuery()) {
+          <button
+            type="button"
+            class="icon-explorer__clear"
+            aria-label="Limpar busca"
+            (mousedown)="preserveFocus($event)"
+            (click)="onIconQueryChange('')"
+          >×</button>
+        }
+      </div>
+
+      @if (iconInputFocused()) {
+        <ul class="icon-explorer__suggestions" role="listbox">
+          @if (iconSuggestions().length === 0) {
+            <li class="icon-explorer__empty">Nenhum ícone encontrado.</li>
+          } @else {
+            @for (name of iconSuggestions(); track name) {
+              <li
+                class="icon-explorer__suggestion"
+                role="option"
+                [class.icon-explorer__suggestion--selected]="name === selectedIcon()"
+                (mousedown)="preserveFocus($event)"
+                (click)="selectIcon(name)"
+              >
+                <kit-icon [name]="name" [size]="18" color="var(--text-body)" />
+                <span class="icon-explorer__suggestion-name">{{ name }}</span>
+              </li>
+            }
+            @if (iconMatchCount() > iconSuggestions().length) {
+              <li class="icon-explorer__more">
+                +{{ iconMatchCount() - iconSuggestions().length }} resultado{{ iconMatchCount() - iconSuggestions().length === 1 ? '' : 's' }} a mais
+              </li>
+            }
+          }
+        </ul>
+      }
+
+      <div class="icon-explorer__snippet">
+        <span class="icon-explorer__snippet-label">HTML</span>
+        <pre class="code-snippet icon-explorer__snippet-code"><code>{{ iconHtmlSnippet() }}</code></pre>
+      </div>
+
+      <div class="icon-explorer__snippet">
+        <span class="icon-explorer__snippet-label">TypeScript (import)</span>
+        <pre class="code-snippet icon-explorer__snippet-code"><code>{{ iconTsSnippet }}</code></pre>
+      </div>
+    </div>
+
+    <!-- Coluna direita: preview + cores + tamanhos -->
+    <div class="icon-explorer__preview">
+      <div class="icon-explorer__icon-stage" aria-hidden="true">
+        <kit-icon [name]="selectedIcon()" [size]="selectedIconSize()" [color]="selectedIconColor()" />
+      </div>
+
+      <div class="icon-explorer__meta">
+        <span class="icon-explorer__name">{{ selectedIcon() }}.svg</span>
+        <a class="icon-explorer__url" [href]="selectedIconUrl()" target="_blank" rel="noopener">abrir SVG no GitHub ↗</a>
+      </div>
+
+      <div class="icon-explorer__colors" role="group" aria-label="Cor do ícone">
+        @for (swatch of iconColorSwatches; track swatch.value) {
+          <button
+            type="button"
+            class="icon-explorer__swatch"
+            [class.icon-explorer__swatch--selected]="swatch.value === selectedIconColor()"
+            [style.background-color]="swatch.value"
+            [attr.aria-label]="swatch.label"
+            [title]="swatch.label"
+            (click)="selectIconColor(swatch.value)"
+          ></button>
+        }
+      </div>
+
+      <div class="icon-explorer__sizes" role="group" aria-label="Tamanho do ícone">
+        @for (preset of iconSizePresets; track preset.value) {
+          <button
+            type="button"
+            class="icon-explorer__size-preset"
+            [class.icon-explorer__size-preset--selected]="preset.value === selectedIconSize()"
+            (click)="selectIconSize(preset.value)"
+          >{{ preset.label }} · {{ preset.value }}px</button>
+        }
+
+        <label class="icon-explorer__size-custom">
+          <span>Px</span>
+          <input
+            type="number"
+            min="8"
+            max="256"
+            step="1"
+            [value]="selectedIconSize()"
+            (input)="onIconSizeInput($any($event.target).value)"
+            aria-label="Tamanho personalizado em pixels"
+          />
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="documentation">
+    <div class="doc-card">
+      <h3>Como usar</h3>
+      <ul>
+        <li>Importe <code>IconComponent</code> de <code>creamy-kit</code> no seu componente standalone.</li>
+        <li>Passe <code>name</code> (string), <code>[size]</code> (number, default 24) e <code>color</code> (qualquer valor CSS).</li>
+        <li>Internamente o SVG é carregado como <code>mask-image</code> da raw URL do GitHub e pintado via <code>background-color</code>.</li>
+        <li>Catálogo completo no README do
+          <a href="https://github.com/marinellibr/creamy-kit-resources" target="_blank" rel="noopener">creamy-kit-resources</a>.
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

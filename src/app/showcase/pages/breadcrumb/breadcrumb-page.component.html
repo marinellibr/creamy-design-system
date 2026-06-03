@@ -1,0 +1,21 @@
+<ds-page-header label="Breadcrumb" selector="kit-breadcrumb" [code]="snippet" />
+
+<section class="component-section">
+  <div class="inputs-stack">
+    <kit-breadcrumb path="Início/Produtos/Tênis/Corrida" />
+    <kit-breadcrumb path="Home/Configurações" />
+  </div>
+
+  <div class="documentation">
+    <div class="doc-card">
+      <h3>path</h3>
+      <p><strong>Type:</strong> <code>string</code></p>
+      <p>
+        Caminho dividido por <code>/</code>. Cada segmento vira um texto
+        clicável (Poppins 14px, Action/neutral/base), separado por um chevron à
+        direita. Emite <code>(itemClick)</code> com
+        <code>{{ '{' }} index, label, path {{ '}' }}</code>.
+      </p>
+    </div>
+  </div>
+</section>

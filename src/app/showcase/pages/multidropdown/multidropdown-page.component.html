@@ -1,0 +1,22 @@
+<ds-page-header label="MultiDropdown" selector="kit-multidropdown" [code]="snippet" />
+
+<section class="component-section">
+  <h3 class="variant-label">múltipla escolha</h3>
+  <div class="inputs-stack">
+    <kit-multidropdown title="Tags" placeholder="Selecione uma ou mais" helper="Escolha quantas quiser" [options]="countryOptions" />
+    <kit-multidropdown title="Desabilitado" placeholder="Não selecionável" [options]="countryOptions" [disabled]="true" />
+  </div>
+
+  <div class="documentation">
+    <div class="doc-card">
+      <h3>MultiDropdown</h3>
+      <p>
+        Igual ao Dropdown, mas com <strong>múltipla escolha</strong>: cada opção
+        tem um quadrado à esquerda em Action/neutral/base, que vira
+        Action/primary/base quando selecionado. O menu não fecha ao selecionar;
+        o valor é um <code>string[]</code>. Implementa
+        <code>ControlValueAccessor</code>.
+      </p>
+    </div>
+  </div>
+</section>

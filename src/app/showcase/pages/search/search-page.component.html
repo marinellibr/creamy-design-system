@@ -1,0 +1,27 @@
+<ds-page-header label="Search bar" selector="kit-search" [code]="snippet" />
+
+<section class="component-section">
+  <h3 class="variant-label">variant="default"</h3>
+  <div class="inputs-stack">
+    <kit-search placeholder="Pesquisar produtos…">
+      <svg iconRight viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M7 12h10M10 18h4"/></svg>
+    </kit-search>
+
+    <kit-search placeholder="Versão compacta — 40px, ícones 16px" [small]="true">
+      <svg iconRight viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M7 12h10M10 18h4"/></svg>
+    </kit-search>
+  </div>
+
+  <div class="documentation">
+    <div class="doc-card">
+      <h3>Comportamento</h3>
+      <ul>
+        <li>Repouso: ícone de busca (24px) à esquerda + placeholder/valor + ícone à direita (<code>[iconRight]</code>)</li>
+        <li>Ao focar: o ícone da esquerda some; o da direita vira um <strong>X</strong> que limpa o texto</li>
+        <li>Ao clicar fora: o ícone da esquerda volta, com o texto digitado no lugar do placeholder</li>
+        <li><code>[small]</code> — versão compacta: altura 40px e ícones 16px</li>
+      </ul>
+      <p>Params: <code>placeholder</code>, <code>[small]</code>, <code>[iconRight]</code>. Implementa <code>ControlValueAccessor</code>.</p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,58 @@
+<ds-page-header label="Input" selector="kit-input" [code]="snippet" />
+
+<section class="component-section">
+  <h3 class="variant-label">variant="default"</h3>
+  <div class="inputs-stack">
+    <kit-input
+      title="Nome completo"
+      placeholder="Digite seu nome"
+      helper="Como aparece no documento"
+    />
+
+    <kit-input title="E-mail" placeholder="seu@email.com" helper="Usaremos para login">
+      <svg icon viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M4 7l8 6 8-6"/></svg>
+    </kit-input>
+
+    <kit-input title="Buscar" placeholder="Pesquisar…">
+      <svg icon viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+    </kit-input>
+
+    <kit-input
+      class="input--focus-demo"
+      title="Campo focado (estado)"
+      placeholder="Borda 2px Background/primary"
+      helper="Demonstração do estado de foco"
+    />
+
+    <kit-input
+      title="Campo desabilitado"
+      placeholder="Não editável"
+      helper="Este campo está bloqueado"
+      [disabled]="true"
+    />
+
+    <kit-input
+      title="Senha"
+      type="password"
+      placeholder="Mínimo 8 caracteres"
+      helper="Senha muito curta"
+      [error]="true"
+    />
+  </div>
+
+  <div class="documentation">
+    <div class="doc-card">
+      <h3>Parâmetros</h3>
+      <ul>
+        <li><code>type</code> — tipo nativo (text, password, …)</li>
+        <li><code>placeholder</code> — texto placeholder (14px, disabled-base)</li>
+        <li><code>title</code> — título opcional acima (16px, Poppins medium)</li>
+        <li><code>helper</code> — texto opcional abaixo (11px)</li>
+        <li><code>[disabled]</code> — fundo Action/disabled/base</li>
+        <li><code>[error]</code> — borda + helper em Feedback/error, com ícone</li>
+        <li><code>[icon]</code> (projeção) — ícone 24px à direita</li>
+      </ul>
+      <p>Implementa <code>ControlValueAccessor</code>. Ao focar, a borda fica 2px Background/primary.</p>
+    </div>
+  </div>
+</section>
