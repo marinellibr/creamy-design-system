@@ -30,6 +30,7 @@ const READY_PAGES: Record<string, () => Promise<unknown>> = {
   image: () => import('./pages/image/image-page.component').then((m) => m.ImagePageComponent),
   'on-brand': () => import('./pages/on-brand/on-brand-page.component').then((m) => m.OnBrandPageComponent),
   'brand': () => import('./pages/brand/brand-page.component').then((m) => m.BrandPageComponent),
+  'loading': () => import('./pages/loading/loading-page.component').then((m) => m.LoadingPageComponent),
 };
 
 /** Rotas-filhas: uma por componente do registro. */
