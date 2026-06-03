@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, computed, signal } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { HeaderTitleComponent } from 'creamy-kit';
 import { COMPONENTS, ComponentEntry, GROUP_ORDER } from '../component-registry';
 
 interface NavGroup {
@@ -14,7 +15,7 @@ interface NavGroup {
 @Component({
   selector: 'app-showcase-layout',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, RouterLinkActive],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive, HeaderTitleComponent],
   templateUrl: './showcase-layout.component.html',
   styleUrl: './showcase-layout.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
