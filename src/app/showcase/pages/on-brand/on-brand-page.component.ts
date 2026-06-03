@@ -31,8 +31,8 @@ export class OnBrandPageComponent {
     { label: 'Alemanha', value: 'de' },
   ];
 
-  protected readonly snippet = `<kit-dropdown variant="on-brand" ... />
-<kit-search   variant="on-brand" ... />
-<kit-password variant="on-brand" ... />
-<kit-textbox  variant="on-brand" ... />`;
+  protected readonly snippet = `<creamy-kit-dropdown variant="on-brand" ... />
+<creamy-kit-search   variant="on-brand" ... />
+<creamy-kit-password variant="on-brand" ... />
+<creamy-kit-textbox  variant="on-brand" ... />`;
 }

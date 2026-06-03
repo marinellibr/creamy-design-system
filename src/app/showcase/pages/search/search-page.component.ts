@@ -10,11 +10,11 @@ import { PageHeaderComponent } from '../../shared/page-header.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SearchPageComponent {
-  protected readonly snippet = `<kit-search placeholder="Pesquisar…">
+  protected readonly snippet = `<creamy-kit-search placeholder="Pesquisar…">
   <svg iconRight>...</svg>
 </kit-search>
 
-<kit-search placeholder="Compacta" [small]="true">
+<creamy-kit-search placeholder="Compacta" [small]="true">
   <svg iconRight>...</svg>
 </kit-search>`;
 }

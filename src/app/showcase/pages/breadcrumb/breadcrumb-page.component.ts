@@ -10,7 +10,7 @@ import { PageHeaderComponent } from '../../shared/page-header.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BreadcrumbPageComponent {
-  protected readonly snippet = `<kit-breadcrumb
+  protected readonly snippet = `<creamy-kit-breadcrumb
   path="Início/Produtos/Tênis"
   (itemClick)="ir($event)" />`;
 }

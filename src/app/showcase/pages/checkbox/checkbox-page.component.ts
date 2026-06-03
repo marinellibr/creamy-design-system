@@ -23,8 +23,8 @@ export class CheckboxPageComponent {
   { label: 'Receber novidades', value: 'news' },
 ];
 
-<kit-checkbox [options]="options" [(ngModel)]="marcados" />
+<creamy-kit-checkbox [options]="options" [(ngModel)]="marcados" />
 
 <!-- sem os dividers -->
-<kit-checkbox [options]="options" [divider]="false" [(ngModel)]="marcados" />`;
+<creamy-kit-checkbox [options]="options" [divider]="false" [(ngModel)]="marcados" />`;
 }

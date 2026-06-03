@@ -71,7 +71,7 @@ export class IconPageComponent {
     const name = this.selectedIcon();
     const size = this.selectedIconSize();
     const color = this.selectedIconColor();
-    return `<kit-icon name="${name}" [size]="${size}" color="${color}" />`;
+    return `<creamy-kit-icon name="${name}" [size]="${size}" color="${color}" />`;
   });
 
   /** Snippet TypeScript — como importar o componente standalone. */

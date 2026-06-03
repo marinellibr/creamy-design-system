@@ -10,7 +10,7 @@ import { PageHeaderComponent } from '../../shared/page-header.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class InputPageComponent {
-  protected readonly snippet = `<kit-input
+  protected readonly snippet = `<creamy-kit-input
   title="E-mail"
   placeholder="seu@email.com"
   helper="Usaremos para login"

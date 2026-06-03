@@ -19,7 +19,7 @@ export class DropdownPageComponent {
     { label: 'Alemanha', value: 'de' },
   ];
 
-  protected readonly snippet = `<kit-dropdown
+  protected readonly snippet = `<creamy-kit-dropdown
   title="País"
   placeholder="Selecione um país"
   [options]="options"

@@ -10,6 +10,6 @@ import { PageHeaderComponent } from '../../shared/page-header.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DividerPageComponent {
-  protected readonly snippet = `<kit-divider weight="2px" color="border-medium" />
-<kit-divider weight="4px" color="error" />`;
+  protected readonly snippet = `<creamy-kit-divider weight="2px" color="border-medium" />
+<creamy-kit-divider weight="4px" color="error" />`;
 }

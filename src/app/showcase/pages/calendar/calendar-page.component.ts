@@ -13,7 +13,7 @@ import { PageHeaderComponent } from '../../shared/page-header.component';
 export class CalendarPageComponent {
   calendarDate = new Date(2026, 1, 8);
 
-  protected readonly snippet = `<kit-calendar
+  protected readonly snippet = `<creamy-kit-calendar
   footerLabel="Data selecionada"
   footerValue="auto"
   [(ngModel)]="data" />`;

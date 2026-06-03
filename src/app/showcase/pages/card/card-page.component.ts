@@ -10,7 +10,7 @@ import { PageHeaderComponent } from '../../shared/page-header.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CardPageComponent {
-  protected readonly snippet = `<kit-card>
+  protected readonly snippet = `<creamy-kit-card>
   <!-- conteúdo -->
 </kit-card>`;
 }

@@ -19,7 +19,7 @@ export class MultidropdownPageComponent {
     { label: 'Alemanha', value: 'de' },
   ];
 
-  protected readonly snippet = `<kit-multidropdown
+  protected readonly snippet = `<creamy-kit-multidropdown
   title="Tags"
   placeholder="Selecione uma ou mais"
   [options]="options"

@@ -13,7 +13,7 @@ import { PageHeaderComponent } from '../../shared/page-header.component';
 export class DatePickerPageComponent {
   calendarDate = new Date(2026, 1, 8);
 
-  protected readonly snippet = `<kit-date-picker
+  protected readonly snippet = `<creamy-kit-date-picker
   title="Selecione a data"
   description="Description"
   infoText="Texto informativo sobre a escolha da data"

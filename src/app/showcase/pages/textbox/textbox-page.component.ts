@@ -10,7 +10,7 @@ import { PageHeaderComponent } from '../../shared/page-header.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TextboxPageComponent {
-  protected readonly snippet = `<kit-textbox
+  protected readonly snippet = `<creamy-kit-textbox
   title="Comentário"
   placeholder="Escreva aqui…"
   [maxLength]="120"

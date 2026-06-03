@@ -10,7 +10,7 @@ import { PageHeaderComponent } from '../../shared/page-header.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PasswordPageComponent {
-  protected readonly snippet = `<kit-password
+  protected readonly snippet = `<creamy-kit-password
   title="Senha"
   placeholder="Mínimo 8 caracteres"
   helper="Use letras e números"

@@ -10,7 +10,7 @@ import { PageHeaderComponent } from '../../shared/page-header.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AlertPageComponent {
-  protected readonly snippet = `<kit-alert
+  protected readonly snippet = `<creamy-kit-alert
   feedback="success"
   title="Tudo certo!"
   linkText="Ver detalhes"
@@ -18,7 +18,7 @@ export class AlertPageComponent {
   Sua operação foi concluída.
 </kit-alert>
 
-<kit-snackbar feedback="error">
+<creamy-kit-snackbar feedback="error">
   Não foi possível salvar.
 </kit-snackbar>`;
 }

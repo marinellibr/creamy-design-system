@@ -10,6 +10,6 @@ import { PageHeaderComponent } from '../../shared/page-header.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CodePageComponent {
-  protected readonly snippet = `<kit-code title="Código" [length]="6" [(ngModel)]="codigo" />
-<kit-code [length]="4" [error]="true" />`;
+  protected readonly snippet = `<creamy-kit-code title="Código" [length]="6" [(ngModel)]="codigo" />
+<creamy-kit-code [length]="4" [error]="true" />`;
 }

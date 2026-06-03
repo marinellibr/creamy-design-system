@@ -19,12 +19,12 @@ import { PageHeaderComponent } from '../../shared/page-header.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AvatarPageComponent {
-  protected readonly snippet = `<kit-avatar-icon name="user_base" contrast="dark" size="large" />
+  protected readonly snippet = `<creamy-kit-avatar-icon name="user_base" contrast="dark" size="large" />
 
-<kit-avatar-text text="LM" contrast="variant" size="medium" />
+<creamy-kit-avatar-text text="LM" contrast="variant" size="medium" />
 
-<kit-avatar-image src="avatar.jpg" alt="Luiz" size="large" />
+<creamy-kit-avatar-image src="avatar.jpg" alt="Luiz" size="large" />
 
 <!-- anel de progresso -->
-<kit-avatar-text text="LM" [percentage]="75" />`;
+<creamy-kit-avatar-text text="LM" [percentage]="75" />`;
 }

@@ -10,7 +10,7 @@ import { PageHeaderComponent } from '../../shared/page-header.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LoadingPageComponent {
-  protected readonly snippet = `<kit-loading />
-<kit-loading size="small" />
-<kit-loading size="large" variant="subtle" />`;
+  protected readonly snippet = `<creamy-kit-loading />
+<creamy-kit-loading size="small" />
+<creamy-kit-loading size="large" variant="subtle" />`;
 }

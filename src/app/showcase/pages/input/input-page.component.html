@@ -1,37 +1,37 @@
-<ds-page-header label="Input" selector="kit-input" [code]="snippet" />
+<ds-page-header label="Input" selector="creamy-kit-input" [code]="snippet" />
 
 <section class="component-section">
   <h3 class="variant-label">variant="default"</h3>
   <div class="inputs-stack">
-    <kit-input
+    <creamy-kit-input
       title="Nome completo"
       placeholder="Digite seu nome"
       helper="Como aparece no documento"
     />
 
-    <kit-input title="E-mail" placeholder="seu@email.com" helper="Usaremos para login">
+    <creamy-kit-input title="E-mail" placeholder="seu@email.com" helper="Usaremos para login">
       <svg icon viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M4 7l8 6 8-6"/></svg>
     </kit-input>
 
-    <kit-input title="Buscar" placeholder="Pesquisar…">
+    <creamy-kit-input title="Buscar" placeholder="Pesquisar…">
       <svg icon viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
     </kit-input>
 
-    <kit-input
+    <creamy-kit-input
       class="input--focus-demo"
       title="Campo focado (estado)"
       placeholder="Borda 2px Background/primary"
       helper="Demonstração do estado de foco"
     />
 
-    <kit-input
+    <creamy-kit-input
       title="Campo desabilitado"
       placeholder="Não editável"
       helper="Este campo está bloqueado"
       [disabled]="true"
     />
 
-    <kit-input
+    <creamy-kit-input
       title="Senha"
       type="password"
       placeholder="Mínimo 8 caracteres"

@@ -10,7 +10,7 @@ import { PageHeaderComponent } from '../../shared/page-header.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ButtonPageComponent {
-  protected readonly snippet = `<kit-button>Solid Button</kit-button>
-<kit-button appearance="outline">Outline</kit-button>
-<kit-button contrast="on-brand">On-brand</kit-button>`;
+  protected readonly snippet = `<creamy-kit-button>Solid Button</kit-button>
+<creamy-kit-button appearance="outline">Outline</kit-button>
+<creamy-kit-button contrast="on-brand">On-brand</kit-button>`;
 }

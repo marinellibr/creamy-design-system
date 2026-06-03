@@ -22,14 +22,14 @@ import { PageHeaderComponent } from '../../shared/page-header.component';
 })
 export class HeaderPageComponent {
   protected readonly snippet = `<!-- search (com voltar ou avatar) -->
-<kit-header-search placeholder="O que sua pele procura?" />
-<kit-header-search back placeholder="..." (backClick)="voltar()" />
-<kit-header-search avatarSrc="perfil.jpg" placeholder="..." />
+<creamy-kit-header-search placeholder="O que sua pele procura?" />
+<creamy-kit-header-search back placeholder="..." (backClick)="voltar()" />
+<creamy-kit-header-search avatarSrc="perfil.jpg" placeholder="..." />
 
 <!-- title / large-title / profile -->
-<kit-header-title back title="Title">
+<creamy-kit-header-title back title="Title">
   <button actions>...</button>
 </kit-header-title>
-<kit-header-large-title back subtitle="Small" title="Large" />
-<kit-header-profile avatarSrc="perfil.jpg" title="User" subtitle="Sub" />`;
+<creamy-kit-header-large-title back subtitle="Small" title="Large" />
+<creamy-kit-header-profile avatarSrc="perfil.jpg" title="User" subtitle="Sub" />`;
 }
