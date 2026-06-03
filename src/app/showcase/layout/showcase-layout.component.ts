@@ -23,6 +23,9 @@ export class ShowcaseLayoutComponent {
   /** Termo de filtro da sidebar. */
   protected readonly filter = signal('');
 
+  /** Estado de abertura/fechamento da sidebar. */
+  protected readonly sidebarOpen = signal(true);
+
   /** Quantidade de itens prontos / total, para o rodapé da sidebar. */
   protected readonly readyCount = COMPONENTS.filter((c) => !c.wip).length;
   protected readonly totalCount = COMPONENTS.length;
@@ -43,5 +46,13 @@ export class ShowcaseLayoutComponent {
 
   protected onFilter(value: string): void {
     this.filter.set(value);
+  }
+
+  protected toggleSidebar(): void {
+    this.sidebarOpen.update((open) => !open);
+  }
+
+  protected closeSidebar(): void {
+    this.sidebarOpen.set(false);
   }
 }

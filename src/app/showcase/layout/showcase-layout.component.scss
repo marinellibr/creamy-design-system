@@ -6,6 +6,69 @@
   display: grid;
   grid-template-columns: 264px minmax(0, 1fr);
   min-height: 100vh;
+  position: relative;
+}
+
+.ds-hamburger {
+  display: none;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1000;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+
+  span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--text-body);
+    border-radius: 1px;
+    position: absolute;
+    left: 10px;
+    transition: all 0.3s ease;
+
+    &:nth-child(1) {
+      top: 12px;
+    }
+
+    &:nth-child(2) {
+      top: 20px;
+    }
+
+    &:nth-child(3) {
+      top: 28px;
+    }
+  }
+
+  &:hover span {
+    background: var(--primary-base);
+  }
+}
+
+.ds-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* ------------------------------- Sidebar ------------------------------- */
@@ -22,6 +85,13 @@
   color: var(--primary-contrast);
   border-right: 1px solid rgba(0, 0, 0, 0.1);
   overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.ds-sidebar__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .ds-sidebar__brand {
@@ -32,6 +102,27 @@
   text-decoration: none;
   color: inherit;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  flex: 1;
+}
+
+.ds-sidebar__close {
+  display: none;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--primary-contrast);
+  font-size: 24px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+  }
 }
 
 .ds-sidebar__logo {
@@ -175,16 +266,47 @@
 }
 
 @media (max-width: 860px) {
+  .ds-hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ds-overlay {
+    display: block;
+  }
+
   .ds-shell {
     grid-template-columns: 1fr;
   }
 
+  .ds-shell.ds-sidebar--open {
+    .ds-sidebar {
+      transform: translateX(0);
+    }
+
+    .ds-overlay {
+      display: block;
+    }
+  }
+
   .ds-sidebar {
-    position: static;
-    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 1001;
+    width: 264px;
+    transform: translateX(-100%);
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
+  }
+
+  .ds-sidebar__close {
+    display: flex;
   }
 
   .ds-content {
     padding: 1.5rem;
+    margin-top: 3rem;
   }
 }

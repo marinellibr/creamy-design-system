@@ -1,9 +1,24 @@
-<div class="ds-shell">
-  <aside class="ds-sidebar">
-    <a class="ds-sidebar__brand" routerLink="/" routerLinkActive="is-active" [routerLinkActiveOptions]="{ exact: true }">
-      <span class="ds-sidebar__logo">🍦 Creamy Kit</span>
-      <span class="ds-sidebar__tagline">Design System</span>
-    </a>
+<div class="ds-shell" [class.ds-sidebar--open]="sidebarOpen()">
+  <button class="ds-hamburger" (click)="toggleSidebar()" aria-label="Toggle sidebar">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  @if (sidebarOpen()) {
+    <div class="ds-overlay" (click)="closeSidebar()"></div>
+  }
+
+  <aside class="ds-sidebar" [class.is-open]="sidebarOpen()">
+    <div class="ds-sidebar__header">
+      <a class="ds-sidebar__brand" routerLink="/" routerLinkActive="is-active" [routerLinkActiveOptions]="{ exact: true }">
+        <span class="ds-sidebar__logo">🍦 Creamy Kit</span>
+        <span class="ds-sidebar__tagline">Design System</span>
+      </a>
+      <button class="ds-sidebar__close" (click)="closeSidebar()" aria-label="Close sidebar">
+        ✕
+      </button>
+    </div>
 
     <div class="ds-sidebar__search">
       <input
@@ -27,6 +42,7 @@
                   class="ds-nav__link"
                   [routerLink]="['/components', item.slug]"
                   routerLinkActive="is-active"
+                  (click)="closeSidebar()"
                 >
                   <span class="ds-nav__label">{{ item.label }}</span>
                   @if (item.wip) {
