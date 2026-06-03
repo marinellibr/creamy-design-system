@@ -57,7 +57,7 @@ export const COMPONENTS: readonly ComponentEntry[] = [
 
   // ----------------------------- Feedback -----------------------------
   { slug: 'alert', label: 'Alert', selector: 'kit-alert · kit-snackbar', group: 'Feedback' },
-  { slug: 'banner', label: 'Banner', selector: 'kit-banner · -tag · -card', group: 'Feedback' },
+  { slug: 'banner', label: 'Banner', selector: 'kit-banner · kit-banner-tag · kit-banner-card', group: 'Feedback' },
   { slug: 'loading', label: 'Loading', selector: 'kit-loading', group: 'Feedback', wip: true },
   { slug: 'progress', label: 'Progress', selector: 'kit-progress', group: 'Feedback', wip: true },
   { slug: 'tooltip', label: 'Tooltip', selector: 'kit-tooltip', group: 'Feedback', wip: true },
