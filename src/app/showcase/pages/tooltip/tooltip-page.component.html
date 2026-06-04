@@ -38,15 +38,10 @@
       <!-- Contrast Toggle -->
       <div class="control-group">
         <span class="control-label">Variante:</span>
-        <label class="toggle-label">
-          <input
-            type="checkbox"
-            [checked]="isContrast()"
-            (change)="isContrast.set(!isContrast())"
-            class="toggle-input"
-          />
-          <span>Contrast</span>
-        </label>
+        <creamy-kit-switch
+          [ngModel]="isContrast()"
+          (ngModelChange)="isContrast.set($event)"
+        />
       </div>
     </div>
   </div>
