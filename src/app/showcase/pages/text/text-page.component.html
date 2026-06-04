@@ -1,0 +1,161 @@
+<ds-page-header label="Typography" selector="creamy-kit-text" [code]="snippet" />
+
+<section class="component-section">
+  <h3 class="variant-label">Title</h3>
+  <div class="example-grid">
+    <div class="example-item">
+      <div class="showcase-box">
+        <creamy-kit-text type="title" size="small">Small Title 16px</creamy-kit-text>
+      </div>
+      <span class="label">small</span>
+    </div>
+    <div class="example-item">
+      <div class="showcase-box">
+        <creamy-kit-text type="title" size="default">Default Title 24px</creamy-kit-text>
+      </div>
+      <span class="label">default</span>
+    </div>
+    <div class="example-item">
+      <div class="showcase-box">
+        <creamy-kit-text type="title" size="large">Large Title 40px</creamy-kit-text>
+      </div>
+      <span class="label">large</span>
+    </div>
+  </div>
+
+  <h3 class="variant-label">Subtitle</h3>
+  <div class="showcase-box">
+    <creamy-kit-text type="subtitle">Subtitle 36px</creamy-kit-text>
+  </div>
+
+  <h3 class="variant-label">Section</h3>
+  <div class="example-grid">
+    <div class="example-item">
+      <div class="showcase-box">
+        <creamy-kit-text type="section" size="small">Small Section 16px</creamy-kit-text>
+      </div>
+      <span class="label">small</span>
+    </div>
+    <div class="example-item">
+      <div class="showcase-box">
+        <creamy-kit-text type="section" size="default">Default Section 20px</creamy-kit-text>
+      </div>
+      <span class="label">default</span>
+    </div>
+  </div>
+
+  <h3 class="variant-label">Body</h3>
+  <div class="example-grid">
+    <div class="example-item">
+      <div class="showcase-box">
+        <creamy-kit-text type="body" size="small">Small Body 14px</creamy-kit-text>
+      </div>
+      <span class="label">small</span>
+    </div>
+    <div class="example-item">
+      <div class="showcase-box">
+        <creamy-kit-text type="body" size="default">Default Body 16px</creamy-kit-text>
+      </div>
+      <span class="label">default</span>
+    </div>
+    <div class="example-item">
+      <div class="showcase-box">
+        <creamy-kit-text type="body" size="large">Large Body 18px</creamy-kit-text>
+      </div>
+      <span class="label">large</span>
+    </div>
+  </div>
+
+  <h3 class="variant-label">Body Bold</h3>
+  <div class="example-grid">
+    <div class="example-item">
+      <div class="showcase-box">
+        <creamy-kit-text type="body" size="small" [bold]="true">Small Bold 14px</creamy-kit-text>
+      </div>
+      <span class="label">small bold</span>
+    </div>
+    <div class="example-item">
+      <div class="showcase-box">
+        <creamy-kit-text type="body" size="default" [bold]="true">Default Bold 16px</creamy-kit-text>
+      </div>
+      <span class="label">default bold</span>
+    </div>
+    <div class="example-item">
+      <div class="showcase-box">
+        <creamy-kit-text type="body" size="large" [bold]="true">Large Bold 18px</creamy-kit-text>
+      </div>
+      <span class="label">large bold</span>
+    </div>
+  </div>
+
+  <h3 class="variant-label">Label</h3>
+  <div class="example-grid">
+    <div class="example-item">
+      <div class="showcase-box">
+        <creamy-kit-text type="label" size="xxsmall">XXSmall 10px</creamy-kit-text>
+      </div>
+      <span class="label">xxsmall</span>
+    </div>
+    <div class="example-item">
+      <div class="showcase-box">
+        <creamy-kit-text type="label" size="xsmall">XSmall 11px</creamy-kit-text>
+      </div>
+      <span class="label">xsmall</span>
+    </div>
+    <div class="example-item">
+      <div class="showcase-box">
+        <creamy-kit-text type="label" size="small">Small 14px</creamy-kit-text>
+      </div>
+      <span class="label">small</span>
+    </div>
+    <div class="example-item">
+      <div class="showcase-box">
+        <creamy-kit-text type="label" size="default">Default 16px</creamy-kit-text>
+      </div>
+      <span class="label">default</span>
+    </div>
+    <div class="example-item">
+      <div class="showcase-box">
+        <creamy-kit-text type="label" size="large">Large 20px</creamy-kit-text>
+      </div>
+      <span class="label">large</span>
+    </div>
+  </div>
+
+  <h3 class="variant-label">Colors</h3>
+  <div class="example-grid">
+    <div class="example-item">
+      <div class="showcase-box">
+        <creamy-kit-text type="title" size="default" color="default">Default Color</creamy-kit-text>
+      </div>
+      <span class="label">default</span>
+    </div>
+    <div class="example-item">
+      <div class="showcase-box">
+        <creamy-kit-text type="title" size="default" color="on-brand">On Brand</creamy-kit-text>
+      </div>
+      <span class="label">on-brand</span>
+    </div>
+    <div class="example-item">
+      <div class="showcase-box">
+        <creamy-kit-text type="title" size="default" color="variant">Variant</creamy-kit-text>
+      </div>
+      <span class="label">variant</span>
+    </div>
+  </div>
+
+  <div class="documentation">
+    <div class="doc-card">
+      <h3>Como usar</h3>
+      <ul>
+        <li>Importe <code>TextComponent</code> de <code>creamy-kit</code>.</li>
+        <li>Use o componente <code>&lt;creamy-kit-text&gt;</code> com os inputs:</li>
+        <li><strong>type</strong>: 'title' | 'subtitle' | 'section' | 'body' | 'label'</li>
+        <li><strong>size</strong>: depende do type (veja exemplos acima)</li>
+        <li><strong>color</strong> (opcional): 'default' | 'on-brand' | 'variant' (section não tem variant)</li>
+        <li><strong>bold</strong> (opcional): true para weight 500 em body e label</li>
+        <li><strong>underline</strong> (opcional): true para underline em label</li>
+      </ul>
+    </div>
+  </div>
+</section>

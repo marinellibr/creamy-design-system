@@ -25,6 +25,7 @@ const READY_PAGES: Record<string, () => Promise<unknown>> = {
   radio: () => import('./pages/radio/radio-page.component').then((m) => m.RadioPageComponent),
   switch: () => import('./pages/switch/switch-page.component').then((m) => m.SwitchPageComponent),
   'tab-bar': () => import('./pages/tab-bar/tab-bar-page.component').then((m) => m.TabBarPageComponent),
+  text: () => import('./pages/text/text-page.component').then((m) => m.TextPageComponent),
   alert: () => import('./pages/alert/alert-page.component').then((m) => m.AlertPageComponent),
   banner: () => import('./pages/banner/banner-page.component').then((m) => m.BannerPageComponent),
   breadcrumb: () => import('./pages/breadcrumb/breadcrumb-page.component').then((m) => m.BreadcrumbPageComponent),

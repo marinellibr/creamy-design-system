@@ -82,6 +82,7 @@ export const COMPONENTS: readonly ComponentEntry[] = [
   { slug: 'sheets', label: 'Sheets', selector: 'kit-sheets', group: 'Overlays', wip: true },
 
   // ---------------------------- Tipografia ----------------------------
+  { slug: 'text', label: 'Text', selector: 'kit-text', group: 'Tipografia' },
   { slug: 'text-link', label: 'TextLink', selector: 'kit-text-link', group: 'Tipografia', wip: true },
 
   // ----------------------------- Padrões -----------------------------

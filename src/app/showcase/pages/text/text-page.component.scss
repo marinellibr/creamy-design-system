@@ -1,0 +1,34 @@
+.example-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.example-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.showcase-box {
+  width: 100%;
+  padding: 1.5rem;
+  border: 1px solid var(--border-soft, #e8e8ea);
+  border-radius: 8px;
+  background: #f9f9fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80px;
+  text-align: center;
+}
+
+.label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-body-2, #6f6f6f);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
