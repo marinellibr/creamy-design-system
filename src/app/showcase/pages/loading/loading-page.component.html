@@ -1,9 +1,16 @@
 <ds-page-header label="Loading" selector="creamy-kit-loading" [code]="snippet" />
 
 <section class="component-section">
-  <h3 class="variant-label">Default Loaders</h3>
+  <h3 class="variant-label">Primary</h3>
 
   <div class="loading-grid">
+    <div class="loading-item">
+      <div class="loading-stage">
+        <creamy-kit-loading size="xsmall" />
+      </div>
+      <span class="loading-label">XSmall</span>
+    </div>
+
     <div class="loading-item">
       <div class="loading-stage">
         <creamy-kit-loading size="small" />
@@ -26,28 +33,92 @@
     </div>
   </div>
 
-  <h3 class="variant-label">Subtle Variant</h3>
+  <h3 class="variant-label">Neutral</h3>
 
   <div class="loading-grid">
     <div class="loading-item">
       <div class="loading-stage">
-        <creamy-kit-loading size="small" variant="subtle" />
+        <creamy-kit-loading size="xsmall" variant="neutral" />
+      </div>
+      <span class="loading-label">XSmall</span>
+    </div>
+
+    <div class="loading-item">
+      <div class="loading-stage">
+        <creamy-kit-loading size="small" variant="neutral" />
       </div>
       <span class="loading-label">Small</span>
     </div>
 
     <div class="loading-item">
       <div class="loading-stage">
-        <creamy-kit-loading size="medium" variant="subtle" />
+        <creamy-kit-loading size="medium" variant="neutral" />
       </div>
       <span class="loading-label">Medium</span>
     </div>
 
     <div class="loading-item">
       <div class="loading-stage">
-        <creamy-kit-loading size="large" variant="subtle" />
+        <creamy-kit-loading size="large" variant="neutral" />
       </div>
       <span class="loading-label">Large</span>
+    </div>
+  </div>
+
+  <h3 class="variant-label">On brand</h3>
+
+  <div class="loading-grid">
+    <div class="loading-item">
+      <div class="loading-stage loading-stage--brand">
+        <creamy-kit-loading size="small" variant="on-brand" />
+      </div>
+      <span class="loading-label">Small</span>
+    </div>
+
+    <div class="loading-item">
+      <div class="loading-stage loading-stage--brand">
+        <creamy-kit-loading size="medium" variant="on-brand" />
+      </div>
+      <span class="loading-label">Medium</span>
+    </div>
+
+    <div class="loading-item">
+      <div class="loading-stage loading-stage--brand">
+        <creamy-kit-loading size="large" variant="on-brand" />
+      </div>
+      <span class="loading-label">Large</span>
+    </div>
+  </div>
+
+  <h3 class="variant-label">Ícone central</h3>
+
+  <div class="loading-grid">
+    <div class="loading-item">
+      <div class="loading-stage">
+        <creamy-kit-loading size="large" icon="circle_variant" />
+      </div>
+      <span class="loading-label">circle_variant</span>
+    </div>
+
+    <div class="loading-item">
+      <div class="loading-stage">
+        <creamy-kit-loading size="large" icon="lock_base" variant="neutral" />
+      </div>
+      <span class="loading-label">lock_base</span>
+    </div>
+
+    <div class="loading-item">
+      <div class="loading-stage">
+        <creamy-kit-loading size="large" icon="search_variant" />
+      </div>
+      <span class="loading-label">search_variant</span>
+    </div>
+
+    <div class="loading-item">
+      <div class="loading-stage">
+        <creamy-kit-loading size="large" [showIcon]="false" variant="neutral" />
+      </div>
+      <span class="loading-label">Sem ícone</span>
     </div>
   </div>
 
@@ -56,9 +127,11 @@
       <h3>Como usar</h3>
       <ul>
         <li>Importe <code>LoadingComponent</code> de <code>creamy-kit</code>.</li>
-        <li>Use <code>size</code> para controlar o tamanho: <code>small</code>, <code>medium</code> (padrão), ou <code>large</code>.</li>
-        <li>Use <code>variant</code> para a cor: <code>default</code> (azul, padrão) ou <code>subtle</code> (cinza).</li>
-        <li>O spinner é animado automaticamente — perfeito para indicar carregamento.</li>
+        <li>Use <code>icon</code> para o ícone central (nome do SVG sem extensão). Default: <code>circle_variant</code>.</li>
+        <li>Use <code>size</code>: <code>xsmall</code>, <code>small</code>, <code>medium</code> (padrão) ou <code>large</code>.</li>
+        <li>Use <code>variant</code>: <code>primary</code> (azul, padrão), <code>neutral</code> (escuro) ou <code>on-brand</code> (branco, para fundos coloridos).</li>
+        <li>Use <code>[showIcon]="false"</code> para exibir apenas o radial de traços.</li>
+        <li>Os 8 traços percorrem a volta como uma cauda de cometa — animação automática.</li>
       </ul>
     </div>
   </div>

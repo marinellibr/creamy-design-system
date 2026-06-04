@@ -24,6 +24,11 @@
   background: #f9f9fa;
 }
 
+.loading-stage--brand {
+  border-color: transparent;
+  background: var(--primary-base, #128cfe);
+}
+
 .loading-label {
   font-size: 0.85rem;
   color: var(--text-body-2, #6f6f6f);
