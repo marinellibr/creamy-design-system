@@ -1,12 +1,12 @@
 import { ChangeDetectionStrategy, Component, computed, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { TooltipComponent } from 'creamy-kit';
+import { TooltipComponent, SwitchComponent } from 'creamy-kit';
 import { PageHeaderComponent } from '../../shared/page-header.component';
 
 @Component({
   selector: 'app-tooltip-page',
   standalone: true,
-  imports: [PageHeaderComponent, TooltipComponent, FormsModule],
+  imports: [PageHeaderComponent, TooltipComponent, SwitchComponent, FormsModule],
   templateUrl: './tooltip-page.component.html',
   styleUrl: './tooltip-page.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

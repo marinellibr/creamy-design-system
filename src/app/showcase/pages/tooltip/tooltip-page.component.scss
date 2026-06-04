@@ -17,7 +17,13 @@
   padding: 2rem;
   border: 1px solid var(--border-soft, #e8e8ea);
   border-radius: 12px;
-  background: #f9f9fa;
+  background: var(--background-variant-2, #f9f9fa);
+  transition: background-color 0.2s ease;
+
+  &--brand {
+    border-color: transparent;
+    background: var(--primary-base, #128cfe);
+  }
 }
 
 .controls {
@@ -30,13 +36,6 @@
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-
-  creamy-kit-switch {
-    display: inline-flex !important;
-    width: auto !important;
-    height: auto !important;
-    min-height: 40px !important;
-  }
 }
 
 .control-label {
