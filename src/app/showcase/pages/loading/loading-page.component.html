@@ -1,124 +1,104 @@
 <ds-page-header label="Loading" selector="creamy-kit-loading" [code]="snippet" />
 
 <section class="component-section">
-  <h3 class="variant-label">Primary</h3>
+  <h3 class="variant-label">Playground</h3>
 
-  <div class="loading-grid">
-    <div class="loading-item">
-      <div class="loading-stage">
-        <creamy-kit-loading size="xsmall" />
-      </div>
-      <span class="loading-label">XSmall</span>
+  <div class="playground-container">
+    <div class="preview-box">
+      <creamy-kit-loading
+        [icon]="iconName()"
+        [size]="size()"
+        [variant]="variant()"
+        [showIcon]="showIcon()"
+      />
     </div>
 
-    <div class="loading-item">
-      <div class="loading-stage">
-        <creamy-kit-loading size="small" />
+    <div class="controls">
+      <!-- Size Selector -->
+      <div class="control-group">
+        <span class="control-label">Tamanho:</span>
+        <div class="button-group">
+          <button
+            class="size-btn"
+            [class.active]="size() === 'xsmall'"
+            (click)="size.set('xsmall')"
+          >XSmall</button>
+          <button
+            class="size-btn"
+            [class.active]="size() === 'small'"
+            (click)="size.set('small')"
+          >Small</button>
+          <button
+            class="size-btn"
+            [class.active]="size() === 'medium'"
+            (click)="size.set('medium')"
+          >Medium</button>
+          <button
+            class="size-btn"
+            [class.active]="size() === 'large'"
+            (click)="size.set('large')"
+          >Large</button>
+          <button
+            class="size-btn"
+            [class.active]="size() === 'xlarge'"
+            (click)="size.set('xlarge')"
+          >XLarge</button>
+        </div>
       </div>
-      <span class="loading-label">Small</span>
-    </div>
 
-    <div class="loading-item">
-      <div class="loading-stage">
-        <creamy-kit-loading size="medium" />
+      <!-- Color Selector -->
+      <div class="control-group">
+        <span class="control-label">Cor:</span>
+        <div class="button-group">
+          <button
+            class="color-btn color-btn--primary"
+            [class.active]="variant() === 'primary'"
+            (click)="variant.set('primary')"
+          >Primary</button>
+          <button
+            class="color-btn color-btn--neutral"
+            [class.active]="variant() === 'neutral'"
+            (click)="variant.set('neutral')"
+          >Neutral</button>
+          <button
+            class="color-btn color-btn--onbrand"
+            [class.active]="variant() === 'on-brand'"
+            (click)="variant.set('on-brand')"
+          >On Brand</button>
+        </div>
       </div>
-      <span class="loading-label">Medium</span>
-    </div>
 
-    <div class="loading-item">
-      <div class="loading-stage">
-        <creamy-kit-loading size="large" />
+      <!-- Icon Toggle -->
+      <div class="control-group">
+        <span class="control-label">Com ícone:</span>
+        <creamy-kit-switch
+          [ngModel]="showIcon()"
+          (ngModelChange)="showIcon.set($event)"
+        />
       </div>
-      <span class="loading-label">Large</span>
-    </div>
-  </div>
 
-  <h3 class="variant-label">Neutral</h3>
-
-  <div class="loading-grid">
-    <div class="loading-item">
-      <div class="loading-stage">
-        <creamy-kit-loading size="xsmall" variant="neutral" />
-      </div>
-      <span class="loading-label">XSmall</span>
-    </div>
-
-    <div class="loading-item">
-      <div class="loading-stage">
-        <creamy-kit-loading size="small" variant="neutral" />
-      </div>
-      <span class="loading-label">Small</span>
-    </div>
-
-    <div class="loading-item">
-      <div class="loading-stage">
-        <creamy-kit-loading size="medium" variant="neutral" />
-      </div>
-      <span class="loading-label">Medium</span>
-    </div>
-
-    <div class="loading-item">
-      <div class="loading-stage">
-        <creamy-kit-loading size="large" variant="neutral" />
-      </div>
-      <span class="loading-label">Large</span>
-    </div>
-  </div>
-
-  <h3 class="variant-label">On brand</h3>
-
-  <div class="loading-grid">
-    <div class="loading-item">
-      <div class="loading-stage loading-stage--brand">
-        <creamy-kit-loading size="small" variant="on-brand" />
-      </div>
-      <span class="loading-label">Small</span>
-    </div>
-
-    <div class="loading-item">
-      <div class="loading-stage loading-stage--brand">
-        <creamy-kit-loading size="medium" variant="on-brand" />
-      </div>
-      <span class="loading-label">Medium</span>
-    </div>
-
-    <div class="loading-item">
-      <div class="loading-stage loading-stage--brand">
-        <creamy-kit-loading size="large" variant="on-brand" />
-      </div>
-      <span class="loading-label">Large</span>
-    </div>
-  </div>
-
-  <h3 class="variant-label">Ícone central</h3>
-
-  <div class="loading-grid">
-    <div class="loading-item">
-      <div class="loading-stage">
-        <creamy-kit-loading size="large" icon="circle_variant" />
-      </div>
-      <span class="loading-label">circle_variant</span>
-    </div>
-
-    <div class="loading-item">
-      <div class="loading-stage">
-        <creamy-kit-loading size="large" icon="lock_base" variant="neutral" />
-      </div>
-      <span class="loading-label">lock_base</span>
-    </div>
-
-    <div class="loading-item">
-      <div class="loading-stage">
-        <creamy-kit-loading size="large" icon="search_variant" />
-      </div>
-      <span class="loading-label">search_variant</span>
-    </div>
-
-    <div class="loading-item">
-      <div class="loading-stage">
-        <creamy-kit-loading size="large" [showIcon]="false" variant="neutral" />
-      </div>
-      <span class="loading-label">Sem ícone</span>
+      <!-- Icon Search (se mostrar ícone) -->
+      @if (showIcon()) {
+        <div class="control-group">
+          <span class="control-label">Ícone:</span>
+          <creamy-kit-input
+            placeholder="Buscar ícone..."
+            [ngModel]="searchQuery()"
+            (ngModelChange)="updateSearch($event)"
+          />
+          <div class="icon-suggestions">
+            @for (icon of filteredIcons(); track icon) {
+              <button
+                class="icon-btn"
+                [class.active]="iconName() === icon"
+                (click)="selectIcon(icon)"
+              >
+                {{ icon }}
+              </button>
+            }
+          </div>
+        </div>
+      }
     </div>
   </div>
 
@@ -127,11 +107,11 @@
       <h3>Como usar</h3>
       <ul>
         <li>Importe <code>LoadingComponent</code> de <code>creamy-kit</code>.</li>
-        <li>Use <code>icon</code> para o ícone central (nome do SVG sem extensão). Default: <code>circle_variant</code>.</li>
-        <li>Use <code>size</code>: <code>xsmall</code>, <code>small</code>, <code>medium</code> (padrão) ou <code>large</code>.</li>
-        <li>Use <code>variant</code>: <code>primary</code> (azul, padrão), <code>neutral</code> (escuro) ou <code>on-brand</code> (branco, para fundos coloridos).</li>
-        <li>Use <code>[showIcon]="false"</code> para exibir apenas o radial de traços.</li>
-        <li>Os 8 traços percorrem a volta como uma cauda de cometa — animação automática.</li>
+        <li><strong>Tamanhos:</strong> <code>xsmall</code> (16px), <code>small</code> (24px), <code>medium</code> (32px), <code>large</code> (64px), <code>xlarge</code> (128px).</li>
+        <li><strong>Variantes:</strong> <code>primary</code> (azul), <code>neutral</code> (cinza), <code>on-brand</code> (branco).</li>
+        <li><strong>Ícone:</strong> use <code>icon</code> para o ícone central (nome do SVG). Default: <code>circle_variant</code>.</li>
+        <li><strong>Sem ícone:</strong> use <code>[showIcon]="false"</code> para mostrar apenas o radial de traços.</li>
+        <li>Os 8 traços animam como uma cauda de cometa — rotação contínua.</li>
       </ul>
     </div>
   </div>
