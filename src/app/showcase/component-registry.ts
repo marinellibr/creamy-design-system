@@ -60,7 +60,7 @@ export const COMPONENTS: readonly ComponentEntry[] = [
   { slug: 'banner', label: 'Banner', selector: 'kit-banner · kit-banner-tag · kit-banner-card', group: 'Feedback' },
   { slug: 'loading', label: 'Loading', selector: 'kit-loading', group: 'Feedback' },
   { slug: 'progress', label: 'Progress', selector: 'kit-progress', group: 'Feedback', wip: true },
-  { slug: 'tooltip', label: 'Tooltip', selector: 'kit-tooltip', group: 'Feedback', wip: true },
+  { slug: 'tooltip', label: 'Tooltip', selector: 'kit-tooltip', group: 'Feedback' },
 
   // ---------------------------- Navegação ----------------------------
   { slug: 'breadcrumb', label: 'Breadcrumb', selector: 'kit-breadcrumb', group: 'Navegação' },

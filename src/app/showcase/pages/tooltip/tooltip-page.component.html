@@ -1,0 +1,102 @@
+<ds-page-header label="Tooltip" selector="creamy-kit-tooltip" [code]="snippet" />
+
+<section class="component-section">
+  <h3 class="variant-label">Playground</h3>
+
+  <div class="playground-container">
+    <div class="preview-box">
+      <creamy-kit-tooltip
+        [text]="text()"
+        [icon]="icon() || undefined"
+        [variant]="variant()"
+      />
+    </div>
+
+    <div class="controls">
+      <!-- Text Input -->
+      <div class="control-group">
+        <span class="control-label">Texto:</span>
+        <input
+          type="text"
+          [(ngModel)]="text"
+          class="text-input"
+          placeholder="Digite o texto do tooltip"
+        />
+      </div>
+
+      <!-- Icon Input -->
+      <div class="control-group">
+        <span class="control-label">Ícone (opcional):</span>
+        <input
+          type="text"
+          [(ngModel)]="icon"
+          class="text-input"
+          placeholder="Ex: copy_base, trash_base, settings_base"
+        />
+      </div>
+
+      <!-- Variant Selector -->
+      <div class="control-group">
+        <span class="control-label">Variante:</span>
+        <div class="button-group">
+          <button
+            class="variant-btn"
+            [class.active]="variant() === 'default'"
+            (click)="variant.set('default')"
+          >Default</button>
+          <button
+            class="variant-btn"
+            [class.active]="variant() === 'contrast'"
+            (click)="variant.set('contrast')"
+          >Contrast</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="variant-label">Exemplos</h3>
+
+  <div class="examples-grid">
+    <div class="example-item">
+      <div class="example-preview example-preview--default">
+        <creamy-kit-tooltip text="Copiar" />
+      </div>
+      <span class="example-label">Default sem ícone</span>
+    </div>
+
+    <div class="example-item">
+      <div class="example-preview example-preview--default">
+        <creamy-kit-tooltip text="Copiar" icon="copy_base" />
+      </div>
+      <span class="example-label">Default com ícone</span>
+    </div>
+
+    <div class="example-item">
+      <div class="example-preview example-preview--contrast">
+        <creamy-kit-tooltip text="Excluir" icon="trash_base" variant="contrast" />
+      </div>
+      <span class="example-label">Contrast com ícone</span>
+    </div>
+
+    <div class="example-item">
+      <div class="example-preview example-preview--default">
+        <creamy-kit-tooltip text="Configurações" icon="settings_base" />
+      </div>
+      <span class="example-label">Default Settings</span>
+    </div>
+  </div>
+
+  <div class="documentation">
+    <div class="doc-card">
+      <h3>Como usar</h3>
+      <ul>
+        <li>Importe <code>TooltipComponent</code> de <code>creamy-kit</code>.</li>
+        <li><strong>text:</strong> Texto exibido no tooltip (obrigatório).</li>
+        <li><strong>icon:</strong> Nome do ícone opcional (ex: <code>copy_base</code>, <code>trash_base</code>).</li>
+        <li><strong>variant:</strong> <code>'default'</code> (fundo neutro com texto azul) ou <code>'contrast'</code> (fundo branco com texto escuro).</li>
+        <li><strong>Dimensões:</strong> Altura 44px, width 100%, border-radius 50%.</li>
+        <li><strong>Spacing:</strong> 8px padding left/right.</li>
+      </ul>
+    </div>
+  </div>
+</section>
