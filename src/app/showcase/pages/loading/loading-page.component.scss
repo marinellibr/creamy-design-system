@@ -18,6 +18,12 @@
   border: 1px solid var(--border-soft, #e8e8ea);
   border-radius: 12px;
   background: #f9f9fa;
+  transition: background-color 0.2s ease;
+
+  &--brand {
+    border-color: transparent;
+    background: var(--primary-base, #128cfe);
+  }
 }
 
 .controls {

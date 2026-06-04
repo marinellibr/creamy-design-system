@@ -4,7 +4,7 @@
   <h3 class="variant-label">Playground</h3>
 
   <div class="playground-container">
-    <div class="preview-box">
+    <div class="preview-box" [class.preview-box--brand]="variant() === 'on-brand'">
       <creamy-kit-loading
         [icon]="iconName()"
         [size]="size()"
