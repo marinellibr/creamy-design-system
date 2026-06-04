@@ -22,6 +22,7 @@ const READY_PAGES: Record<string, () => Promise<unknown>> = {
   code: () => import('./pages/code/code-page.component').then((m) => m.CodePageComponent),
   calendar: () => import('./pages/calendar/calendar-page.component').then((m) => m.CalendarPageComponent),
   'date-picker': () => import('./pages/date-picker/date-picker-page.component').then((m) => m.DatePickerPageComponent),
+  radio: () => import('./pages/radio/radio-page.component').then((m) => m.RadioPageComponent),
   alert: () => import('./pages/alert/alert-page.component').then((m) => m.AlertPageComponent),
   banner: () => import('./pages/banner/banner-page.component').then((m) => m.BannerPageComponent),
   breadcrumb: () => import('./pages/breadcrumb/breadcrumb-page.component').then((m) => m.BreadcrumbPageComponent),

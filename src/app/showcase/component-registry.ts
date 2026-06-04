@@ -52,7 +52,7 @@ export const COMPONENTS: readonly ComponentEntry[] = [
   { slug: 'code', label: 'Code', selector: 'kit-code', group: 'Formulários' },
   { slug: 'calendar', label: 'Calendar', selector: 'kit-calendar', group: 'Formulários' },
   { slug: 'date-picker', label: 'DatePicker', selector: 'kit-date-picker', group: 'Formulários' },
-  { slug: 'radio', label: 'Radio', selector: 'kit-radio', group: 'Formulários', wip: true },
+  { slug: 'radio', label: 'Radio', selector: 'kit-radio', group: 'Formulários' },
   { slug: 'switch', label: 'Switch', selector: 'kit-switch', group: 'Formulários', wip: true },
 
   // ----------------------------- Feedback -----------------------------
