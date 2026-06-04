@@ -1,0 +1,32 @@
+.example-box {
+  padding: 2rem 2rem 80px;
+  border: 1px solid var(--border-soft, #e8e8ea);
+  border-radius: 12px;
+  background: #f9f9fa;
+  margin-bottom: 2rem;
+  position: relative;
+  min-height: 200px;
+}
+
+.note {
+  margin: 0 0 1rem;
+  font-size: 0.9rem;
+  color: var(--text-body-2, #6f6f6f);
+  font-style: italic;
+}
+
+.selected-value {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-soft, #e8e8ea);
+  font-size: 0.9rem;
+  color: var(--text-body-2, #6f6f6f);
+
+  code {
+    padding: 2px 6px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.85em;
+  }
+}

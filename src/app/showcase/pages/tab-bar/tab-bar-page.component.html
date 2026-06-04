@@ -1,0 +1,37 @@
+<ds-page-header label="Tab Bar" selector="creamy-kit-tab-bar · creamy-kit-tab-bar-item" [code]="snippet" />
+
+<section class="component-section">
+  <h3 class="variant-label">Com label e sem label</h3>
+
+  <div class="example-box">
+    <p class="note">Barra fixa na base da viewport com espaço acima para o conteúdo.</p>
+    <creamy-kit-tab-bar [(ngModel)]="selected">
+      <creamy-kit-tab-bar-item icon="home_base" label="Home" value="home" />
+      <creamy-kit-tab-bar-item icon="search_variant" label="Search" value="search" />
+      <creamy-kit-tab-bar-item icon="settings_base" label="Settings" value="settings" />
+      <creamy-kit-tab-bar-item icon="user_base" value="profile" />
+    </creamy-kit-tab-bar>
+    <p class="selected-value">Selecionado: <code>{{ selected() ?? 'nenhum' }}</code></p>
+  </div>
+
+  <div class="documentation">
+    <div class="doc-card">
+      <h3>Como usar</h3>
+      <ul>
+        <li>Importe <code>TabBarComponent</code> e <code>TabBarItemComponent</code> de <code>creamy-kit</code>.</li>
+        <li>Use <code>&lt;creamy-kit-tab-bar&gt;</code> como container.</li>
+        <li>Dentro, adicione <code>&lt;creamy-kit-tab-bar-item&gt;</code> para cada aba.</li>
+        <li><strong>Inputs do TabBarItem:</strong>
+          <ul>
+            <li><code>icon</code> — nome do ícone (obrigatório, 24px, branco)</li>
+            <li><code>label</code> — texto opcional abaixo do ícone (12px, action-neutral-base #484848)</li>
+            <li><code>value</code> — identificador para a seleção (obrigatório)</li>
+          </ul>
+        </li>
+        <li>Use <code>[(ngModel)]</code> ou <code>formControl</code> para vincular a seleção (tipo <code>string</code>).</li>
+        <li>Estilo: altura 74px, 100% de largura, border-radius 24px no topo, fundo azul (#128cfe).</li>
+        <li>Posição: <code>fixed</code> na base da viewport, z-index 100.</li>
+      </ul>
+    </div>
+  </div>
+</section>

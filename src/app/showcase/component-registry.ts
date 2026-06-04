@@ -66,7 +66,7 @@ export const COMPONENTS: readonly ComponentEntry[] = [
   { slug: 'breadcrumb', label: 'Breadcrumb', selector: 'kit-breadcrumb', group: 'Navegação' },
   { slug: 'header', label: 'Header', selector: 'kit-header-search · …', group: 'Navegação' },
   { slug: 'pagination', label: 'Pagination', selector: 'kit-pagination', group: 'Navegação', wip: true },
-  { slug: 'tab-bar', label: 'TabBar', selector: 'kit-tab-bar', group: 'Navegação', wip: true },
+  { slug: 'tab-bar', label: 'TabBar', selector: 'kit-tab-bar', group: 'Navegação' },
   { slug: 'tabs', label: 'Tabs', selector: 'kit-tabs', group: 'Navegação', wip: true },
 
   // ------------------------ Exibição de dados ------------------------
