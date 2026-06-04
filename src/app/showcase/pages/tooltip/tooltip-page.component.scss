@@ -139,8 +139,8 @@
   }
 
   &--contrast {
-    background: #ffffff;
-    border-color: var(--border-base, #c2c2c7);
+    background: var(--primary-base, #128cfe);
+    border-color: transparent;
   }
 }
 

@@ -35,52 +35,35 @@
         />
       </div>
 
-      <!-- Variant Toggle -->
+      <!-- Contrast Toggle -->
       <div class="control-group">
-        <span class="control-label">Variantes:</span>
-        <div class="toggle-group">
-          <label class="toggle-label">
-            <input
-              type="checkbox"
-              [checked]="showDefault()"
-              (change)="showDefault.set(!showDefault())"
-              class="toggle-input"
-            />
-            <span>Default</span>
-          </label>
-          <label class="toggle-label">
-            <input
-              type="checkbox"
-              [checked]="showContrast()"
-              (change)="showContrast.set(!showContrast())"
-              class="toggle-input"
-            />
-            <span>Contrast</span>
-          </label>
-        </div>
+        <span class="control-label">Variante:</span>
+        <label class="toggle-label">
+          <input
+            type="checkbox"
+            [checked]="isContrast()"
+            (change)="isContrast.set(!isContrast())"
+            class="toggle-input"
+          />
+          <span>Contrast</span>
+        </label>
       </div>
     </div>
   </div>
 
-  <h3 class="variant-label">Exemplos</h3>
+  <h3 class="variant-label">Exemplo</h3>
 
-  <div class="examples-grid">
-    @if (showDefault()) {
-      <div class="example-item">
-        <div class="example-preview example-preview--default">
-          <creamy-kit-tooltip text="Copiar" icon="copy_base" />
-        </div>
-        <span class="example-label">Default</span>
+  <div class="example-item">
+    @if (!isContrast()) {
+      <div class="example-preview example-preview--default">
+        <creamy-kit-tooltip text="Copiar" icon="copy_base" />
       </div>
-    }
-
-    @if (showContrast()) {
-      <div class="example-item">
-        <div class="example-preview example-preview--contrast">
-          <creamy-kit-tooltip text="Excluir" icon="trash_base" variant="contrast" />
-        </div>
-        <span class="example-label">Contrast</span>
+      <span class="example-label">Default</span>
+    } @else {
+      <div class="example-preview example-preview--contrast">
+        <creamy-kit-tooltip text="Excluir" icon="trash_base" variant="contrast" />
       </div>
+      <span class="example-label">Contrast</span>
     }
   </div>
 

@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { TooltipComponent } from 'creamy-kit';
 import { PageHeaderComponent } from '../../shared/page-header.component';
@@ -18,7 +18,9 @@ export class TooltipPageComponent {
 
   protected readonly text = signal('Copiar para área de transferência');
   protected readonly icon = signal('copy_base');
-  protected readonly variant = signal<'default' | 'contrast'>('default');
-  protected readonly showDefault = signal(true);
-  protected readonly showContrast = signal(true);
+  protected readonly isContrast = signal(false);
+
+  protected readonly variant = computed(() =>
+    this.isContrast() ? ('contrast' as const) : ('default' as const)
+  );
 }
