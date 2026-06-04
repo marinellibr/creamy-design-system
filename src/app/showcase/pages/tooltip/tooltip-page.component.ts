@@ -18,9 +18,9 @@ export class TooltipPageComponent {
 
   protected readonly text = signal('Copiar para área de transferência');
   protected readonly icon = signal('copy_base');
-  protected readonly isContrast = signal(false);
+  protected readonly ativo = signal(false);
 
   protected readonly variant = computed(() =>
-    this.isContrast() ? ('contrast' as const) : ('default' as const)
+    this.ativo() ? ('contrast' as const) : ('default' as const)
   );
 }
