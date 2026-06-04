@@ -53,7 +53,7 @@ export const COMPONENTS: readonly ComponentEntry[] = [
   { slug: 'calendar', label: 'Calendar', selector: 'kit-calendar', group: 'Formulários' },
   { slug: 'date-picker', label: 'DatePicker', selector: 'kit-date-picker', group: 'Formulários' },
   { slug: 'radio', label: 'Radio', selector: 'kit-radio', group: 'Formulários' },
-  { slug: 'switch', label: 'Switch', selector: 'kit-switch', group: 'Formulários', wip: true },
+  { slug: 'switch', label: 'Switch', selector: 'kit-switch', group: 'Formulários' },
 
   // ----------------------------- Feedback -----------------------------
   { slug: 'alert', label: 'Alert', selector: 'kit-alert · kit-snackbar', group: 'Feedback' },
