@@ -2,11 +2,12 @@ import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { SwitchComponent } from 'creamy-kit';
 import { PageHeaderComponent } from '../../shared/page-header.component';
+import { CodeExampleComponent } from '../../shared/code-example.component';
 
 @Component({
   selector: 'app-switch-page',
   standalone: true,
-  imports: [PageHeaderComponent, SwitchComponent, FormsModule],
+  imports: [PageHeaderComponent, CodeExampleComponent, SwitchComponent, FormsModule],
   templateUrl: './switch-page.component.html',
   styleUrl: './switch-page.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

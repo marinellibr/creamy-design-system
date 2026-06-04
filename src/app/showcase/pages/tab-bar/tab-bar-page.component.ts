@@ -2,11 +2,12 @@ import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { TabBarComponent, TabBarItemComponent } from 'creamy-kit';
 import { PageHeaderComponent } from '../../shared/page-header.component';
+import { CodeExampleComponent } from '../../shared/code-example.component';
 
 @Component({
   selector: 'app-tab-bar-page',
   standalone: true,
-  imports: [PageHeaderComponent, TabBarComponent, TabBarItemComponent, FormsModule],
+  imports: [PageHeaderComponent, CodeExampleComponent, TabBarComponent, TabBarItemComponent, FormsModule],
   templateUrl: './tab-bar-page.component.html',
   styleUrl: './tab-bar-page.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

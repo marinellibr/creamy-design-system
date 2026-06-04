@@ -2,11 +2,12 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MultiDropdownComponent } from 'creamy-kit';
 import { PageHeaderComponent } from '../../shared/page-header.component';
+import { CodeExampleComponent } from '../../shared/code-example.component';
 
 @Component({
   selector: 'app-multidropdown-page',
   standalone: true,
-  imports: [FormsModule, PageHeaderComponent, MultiDropdownComponent],
+  imports: [FormsModule, PageHeaderComponent, CodeExampleComponent, MultiDropdownComponent],
   templateUrl: './multidropdown-page.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

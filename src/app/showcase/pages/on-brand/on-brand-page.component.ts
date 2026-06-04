@@ -7,13 +7,14 @@ import {
   TextboxComponent,
 } from 'creamy-kit';
 import { PageHeaderComponent } from '../../shared/page-header.component';
+import { CodeExampleComponent } from '../../shared/code-example.component';
 
 @Component({
   selector: 'app-on-brand-page',
   standalone: true,
   imports: [
     FormsModule,
-    PageHeaderComponent,
+    PageHeaderComponent, CodeExampleComponent,
     DropdownComponent,
     PasswordComponent,
     SearchComponent,

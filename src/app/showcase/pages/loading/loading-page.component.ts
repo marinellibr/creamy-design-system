@@ -2,11 +2,12 @@ import { ChangeDetectionStrategy, Component, computed, signal } from '@angular/c
 import { FormsModule } from '@angular/forms';
 import { LoadingComponent, SwitchComponent, InputComponent } from 'creamy-kit';
 import { PageHeaderComponent } from '../../shared/page-header.component';
+import { CodeExampleComponent } from '../../shared/code-example.component';
 
 @Component({
   selector: 'app-loading-page',
   standalone: true,
-  imports: [PageHeaderComponent, LoadingComponent, SwitchComponent, InputComponent, FormsModule],
+  imports: [PageHeaderComponent, CodeExampleComponent, LoadingComponent, SwitchComponent, InputComponent, FormsModule],
   templateUrl: './loading-page.component.html',
   styleUrl: './loading-page.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

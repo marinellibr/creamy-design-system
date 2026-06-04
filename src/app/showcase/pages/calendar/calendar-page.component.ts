@@ -2,11 +2,12 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CalendarComponent } from 'creamy-kit';
 import { PageHeaderComponent } from '../../shared/page-header.component';
+import { CodeExampleComponent } from '../../shared/code-example.component';
 
 @Component({
   selector: 'app-calendar-page',
   standalone: true,
-  imports: [FormsModule, PageHeaderComponent, CalendarComponent],
+  imports: [FormsModule, PageHeaderComponent, CodeExampleComponent, CalendarComponent],
   templateUrl: './calendar-page.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

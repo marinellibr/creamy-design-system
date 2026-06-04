@@ -1,11 +1,12 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { AlertComponent, SnackbarComponent } from 'creamy-kit';
 import { PageHeaderComponent } from '../../shared/page-header.component';
+import { CodeExampleComponent } from '../../shared/code-example.component';
 
 @Component({
   selector: 'app-alert-page',
   standalone: true,
-  imports: [PageHeaderComponent, AlertComponent, SnackbarComponent],
+  imports: [PageHeaderComponent, CodeExampleComponent, AlertComponent, SnackbarComponent],
   templateUrl: './alert-page.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

@@ -5,12 +5,13 @@ import {
   BannerTagComponent,
 } from 'creamy-kit';
 import { PageHeaderComponent } from '../../shared/page-header.component';
+import { CodeExampleComponent } from '../../shared/code-example.component';
 
 @Component({
   selector: 'app-banner-page',
   standalone: true,
   imports: [
-    PageHeaderComponent,
+    PageHeaderComponent, CodeExampleComponent,
     BannerComponent,
     BannerTagComponent,
     BannerCardComponent,

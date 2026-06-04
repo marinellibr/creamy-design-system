@@ -2,11 +2,12 @@ import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RadioComponent, type RadioOption } from 'creamy-kit';
 import { PageHeaderComponent } from '../../shared/page-header.component';
+import { CodeExampleComponent } from '../../shared/code-example.component';
 
 @Component({
   selector: 'app-radio-page',
   standalone: true,
-  imports: [PageHeaderComponent, RadioComponent, FormsModule],
+  imports: [PageHeaderComponent, CodeExampleComponent, RadioComponent, FormsModule],
   templateUrl: './radio-page.component.html',
   styleUrl: './radio-page.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

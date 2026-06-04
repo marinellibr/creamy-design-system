@@ -1,11 +1,12 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { TextComponent } from 'creamy-kit';
 import { PageHeaderComponent } from '../../shared/page-header.component';
+import { CodeExampleComponent } from '../../shared/code-example.component';
 
 @Component({
   selector: 'app-text-page',
   standalone: true,
-  imports: [PageHeaderComponent, TextComponent],
+  imports: [PageHeaderComponent, CodeExampleComponent, TextComponent],
   templateUrl: './text-page.component.html',
   styleUrl: './text-page.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

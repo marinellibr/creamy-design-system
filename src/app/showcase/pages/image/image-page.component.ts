@@ -1,11 +1,12 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ImageComponent } from 'creamy-kit';
 import { PageHeaderComponent } from '../../shared/page-header.component';
+import { CodeExampleComponent } from '../../shared/code-example.component';
 
 @Component({
   selector: 'app-image-page',
   standalone: true,
-  imports: [PageHeaderComponent, ImageComponent],
+  imports: [PageHeaderComponent, CodeExampleComponent, ImageComponent],
   templateUrl: './image-page.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

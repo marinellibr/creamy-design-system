@@ -1,13 +1,16 @@
-import { ChangeDetectionStrategy, Component, input } from '@angular/core';
-import { CodeBlockComponent } from './code-block.component';
+import { DOCUMENT } from '@angular/common';
+import { ChangeDetectionStrategy, Component, inject, input } from '@angular/core';
 
 /**
  * Cabeçalho padrão de uma página de componente: nome + seletor + "ver código".
+ *
+ * O botão "ver código" não abre mais o snippet inline — ele rola a página até a
+ * seção `<ds-code-example>` (id `ds-code-example`), renderizada no fim da página,
+ * logo abaixo do card "Como usar".
  */
 @Component({
   selector: 'ds-page-header',
   standalone: true,
-  imports: [CodeBlockComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div class="ds-page-head">
@@ -18,7 +21,9 @@ import { CodeBlockComponent } from './code-block.component';
         }
       </div>
       @if (code()) {
-        <ds-code-block [code]="code()" />
+        <button type="button" class="code-toggle" (click)="scrollToCode()">
+          ver código
+        </button>
       }
     </div>
   `,
@@ -57,7 +62,16 @@ import { CodeBlockComponent } from './code-block.component';
   ],
 })
 export class PageHeaderComponent {
+  private readonly doc = inject(DOCUMENT);
+
   readonly label = input<string>('');
   readonly selector = input<string>('');
   readonly code = input<string>('');
+
+  /** Rola a página até a seção de código no fim do conteúdo. */
+  scrollToCode(): void {
+    this.doc
+      .getElementById('ds-code-example')
+      ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
 }

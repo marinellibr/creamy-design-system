@@ -6,12 +6,13 @@ import {
   HeaderTitleComponent,
 } from 'creamy-kit';
 import { PageHeaderComponent } from '../../shared/page-header.component';
+import { CodeExampleComponent } from '../../shared/code-example.component';
 
 @Component({
   selector: 'app-header-page',
   standalone: true,
   imports: [
-    PageHeaderComponent,
+    PageHeaderComponent, CodeExampleComponent,
     HeaderSearchComponent,
     HeaderTitleComponent,
     HeaderLargeTitleComponent,

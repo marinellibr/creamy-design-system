@@ -15,14 +15,14 @@
   justify-content: center;
   min-height: 200px;
   padding: 2rem;
-  border: 1px solid var(--border-soft, #e8e8ea);
+  border: 1px solid transparent;
   border-radius: 12px;
-  background: var(--background-variant-2, #f9f9fa);
+  background: var(--primary-base, #128cfe);
   transition: background-color 0.2s ease;
 
-  &--brand {
-    border-color: transparent;
-    background: var(--primary-base, #128cfe);
+  &--variant {
+    border-color: var(--border-soft, #e8e8ea);
+    background: var(--background-variant-2, #e8e8ea);
   }
 }
 

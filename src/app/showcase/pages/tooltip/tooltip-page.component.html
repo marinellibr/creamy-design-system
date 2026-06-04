@@ -4,7 +4,7 @@
   <h3 class="variant-label">Playground</h3>
 
   <div class="playground-container">
-    <div class="preview-box" [class.preview-box--brand]="ativo()">
+    <div class="preview-box" [class.preview-box--variant]="ativo()">
       <creamy-kit-tooltip
         [text]="text()"
         [icon]="icon() || undefined"
@@ -57,3 +57,5 @@
     </div>
   </div>
 </section>
+
+<ds-code-example [code]="snippet" />

@@ -5,12 +5,13 @@ import {
   AvatarTextComponent,
 } from 'creamy-kit';
 import { PageHeaderComponent } from '../../shared/page-header.component';
+import { CodeExampleComponent } from '../../shared/code-example.component';
 
 @Component({
   selector: 'app-avatar-page',
   standalone: true,
   imports: [
-    PageHeaderComponent,
+    PageHeaderComponent, CodeExampleComponent,
     AvatarIconComponent,
     AvatarTextComponent,
     AvatarImageComponent,

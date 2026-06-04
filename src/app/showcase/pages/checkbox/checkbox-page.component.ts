@@ -2,11 +2,12 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CheckboxComponent } from 'creamy-kit';
 import { PageHeaderComponent } from '../../shared/page-header.component';
+import { CodeExampleComponent } from '../../shared/code-example.component';
 
 @Component({
   selector: 'app-checkbox-page',
   standalone: true,
-  imports: [FormsModule, PageHeaderComponent, CheckboxComponent],
+  imports: [FormsModule, PageHeaderComponent, CodeExampleComponent, CheckboxComponent],
   templateUrl: './checkbox-page.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
