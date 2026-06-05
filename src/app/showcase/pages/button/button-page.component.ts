@@ -11,7 +11,7 @@ import { CodeExampleComponent } from '../../shared/code-example.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ButtonPageComponent {
-  protected readonly snippet = `<creamy-kit-button>Solid Button</kit-button>
-<creamy-kit-button appearance="outline">Outline</kit-button>
-<creamy-kit-button contrast="on-brand">On-brand</kit-button>`;
+  protected readonly snippet = `<creamy-kit-button>Solid Button</creamy-kit-button>
+<creamy-kit-button appearance="outline">Outline</creamy-kit-button>
+<creamy-kit-button contrast="on-brand">On-brand</creamy-kit-button>`;
 }

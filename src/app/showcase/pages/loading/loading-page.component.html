@@ -5,12 +5,7 @@
 
   <div class="playground-container">
     <div class="preview-box" [class.preview-box--brand]="variant() === 'on-brand'">
-      <creamy-kit-loading
-        [icon]="iconName()"
-        [size]="size()"
-        [variant]="variant()"
-        [showIcon]="showIcon()"
-      />
+      <creamy-kit-loading [icon]="iconName()" [size]="size()" [variant]="variant()" [showIcon]="showIcon()" />
     </div>
 
     <div class="controls">
@@ -18,31 +13,11 @@
       <div class="control-group">
         <span class="control-label">Tamanho:</span>
         <div class="button-group">
-          <button
-            class="size-btn"
-            [class.active]="size() === 'xsmall'"
-            (click)="size.set('xsmall')"
-          >XSmall</button>
-          <button
-            class="size-btn"
-            [class.active]="size() === 'small'"
-            (click)="size.set('small')"
-          >Small</button>
-          <button
-            class="size-btn"
-            [class.active]="size() === 'medium'"
-            (click)="size.set('medium')"
-          >Medium</button>
-          <button
-            class="size-btn"
-            [class.active]="size() === 'large'"
-            (click)="size.set('large')"
-          >Large</button>
-          <button
-            class="size-btn"
-            [class.active]="size() === 'xlarge'"
-            (click)="size.set('xlarge')"
-          >XLarge</button>
+          <button class="size-btn" [class.active]="size() === 'xsmall'" (click)="size.set('xsmall')">XSmall</button>
+          <button class="size-btn" [class.active]="size() === 'small'" (click)="size.set('small')">Small</button>
+          <button class="size-btn" [class.active]="size() === 'medium'" (click)="size.set('medium')">Medium</button>
+          <button class="size-btn" [class.active]="size() === 'large'" (click)="size.set('large')">Large</button>
+          <button class="size-btn" [class.active]="size() === 'xlarge'" (click)="size.set('xlarge')">XLarge</button>
         </div>
       </div>
 
@@ -54,27 +29,30 @@
             class="color-btn color-btn--primary"
             [class.active]="variant() === 'primary'"
             (click)="variant.set('primary')"
-          >Primary</button>
+          >
+            Primary
+          </button>
           <button
             class="color-btn color-btn--neutral"
             [class.active]="variant() === 'neutral'"
             (click)="variant.set('neutral')"
-          >Neutral</button>
+          >
+            Neutral
+          </button>
           <button
             class="color-btn color-btn--onbrand"
             [class.active]="variant() === 'on-brand'"
             (click)="variant.set('on-brand')"
-          >On Brand</button>
+          >
+            On Brand
+          </button>
         </div>
       </div>
 
       <!-- Icon Toggle -->
       <div class="control-group">
         <span class="control-label">Com ícone:</span>
-        <creamy-kit-switch
-          [ngModel]="showIcon()"
-          (ngModelChange)="showIcon.set($event)"
-        />
+        <creamy-kit-switch [ngModel]="showIcon()" (ngModelChange)="showIcon.set($event)" />
       </div>
 
       <!-- Icon Search (se mostrar ícone) -->
@@ -88,11 +66,7 @@
           />
           <div class="icon-suggestions">
             @for (icon of filteredIcons(); track icon) {
-              <button
-                class="icon-btn"
-                [class.active]="iconName() === icon"
-                (click)="selectIcon(icon)"
-              >
+              <button class="icon-btn" [class.active]="iconName() === icon" (click)="selectIcon(icon)">
                 {{ icon }}
               </button>
             }
@@ -107,9 +81,18 @@
       <h3>Como usar</h3>
       <ul>
         <li>Importe <code>LoadingComponent</code> de <code>creamy-kit</code>.</li>
-        <li><strong>Tamanhos:</strong> <code>xsmall</code> (16px), <code>small</code> (24px), <code>medium</code> (32px), <code>large</code> (64px), <code>xlarge</code> (128px).</li>
-        <li><strong>Variantes:</strong> <code>primary</code> (azul), <code>neutral</code> (cinza), <code>on-brand</code> (branco).</li>
-        <li><strong>Ícone:</strong> use <code>icon</code> para o ícone central (nome do SVG). Default: <code>circle_variant</code>.</li>
+        <li>
+          <strong>Tamanhos:</strong> <code>xsmall</code> (16px), <code>small</code> (24px), <code>medium</code> (32px),
+          <code>large</code> (64px), <code>xlarge</code> (128px).
+        </li>
+        <li>
+          <strong>Variantes:</strong> <code>primary</code> (azul), <code>neutral</code> (cinza),
+          <code>on-brand</code> (branco).
+        </li>
+        <li>
+          <strong>Ícone:</strong> use <code>icon</code> para o ícone central (nome do SVG). Default:
+          <code>circle_variant</code>.
+        </li>
         <li><strong>Sem ícone:</strong> use <code>[showIcon]="false"</code> para mostrar apenas o radial de traços.</li>
         <li>Os 8 traços animam como uma cauda de cometa — rotação contínua.</li>
       </ul>

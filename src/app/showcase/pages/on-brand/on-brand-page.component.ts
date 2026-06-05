@@ -14,7 +14,8 @@ import { CodeExampleComponent } from '../../shared/code-example.component';
   standalone: true,
   imports: [
     FormsModule,
-    PageHeaderComponent, CodeExampleComponent,
+    PageHeaderComponent,
+    CodeExampleComponent,
     DropdownComponent,
     PasswordComponent,
     SearchComponent,

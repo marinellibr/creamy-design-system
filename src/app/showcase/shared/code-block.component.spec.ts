@@ -24,16 +24,9 @@ describe('CodeBlockComponent', () => {
     expect(fixture.componentInstance).toBeTruthy();
   });
 
-  it('open starts closed when startOpen is false', () => {
-    const fixture = createComponent(false);
-    const c = fixture.componentInstance as any;
-    expect(c.open()).toBe(false);
-  });
-
-  it('open starts open when startOpen is true', () => {
-    const fixture = createComponent(true);
-    const c = fixture.componentInstance as any;
-    expect(c.open()).toBe(true);
+  it.each([[false], [true]])('open initialises to startOpen=%s', (startOpen: boolean) => {
+    const fixture = createComponent(startOpen);
+    expect((fixture.componentInstance as any).open()).toBe(startOpen);
   });
 
   it('toggle switches open from false to true', () => {

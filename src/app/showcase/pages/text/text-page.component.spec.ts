@@ -6,9 +6,11 @@ describe('TextPageComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [TextPageComponent],
-    }).overrideComponent(TextPageComponent, {
-      set: { imports: [], schemas: [NO_ERRORS_SCHEMA] },
-    }).compileComponents();
+    })
+      .overrideComponent(TextPageComponent, {
+        set: { imports: [], schemas: [NO_ERRORS_SCHEMA] },
+      })
+      .compileComponents();
   });
 
   it('creates the component', () => {

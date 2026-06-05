@@ -20,8 +20,8 @@ import { map } from 'rxjs';
         <code class="wip__selector">&lt;{{ data()!.selector }}&gt;</code>
       }
       <p class="wip__text">
-        Este componente existe na biblioteca <code>creamy-kit</code>, mas a
-        página de demonstração ainda não foi implementada.
+        Este componente existe na biblioteca <code>creamy-kit</code>, mas a página de demonstração
+        ainda não foi implementada.
       </p>
     </div>
   `,
@@ -79,8 +79,6 @@ export class WipPageComponent {
   private readonly route = inject(ActivatedRoute);
 
   protected readonly data = toSignal(
-    this.route.data.pipe(
-      map((d) => d as { label?: string; selector?: string }),
-    ),
+    this.route.data.pipe(map((d) => d as { label?: string; selector?: string })),
   );
 }

@@ -267,7 +267,9 @@
   text-decoration: none;
   color: rgba(255, 255, 255, 0.82);
   font-size: 0.875rem;
-  transition: background 0.12s ease, color 0.12s ease;
+  transition:
+    background 0.12s ease,
+    color 0.12s ease;
 
   &:hover {
     background: rgba(255, 255, 255, 0.08);
@@ -317,10 +319,6 @@
 @media (max-width: 860px) {
   .ds-mobile-header {
     display: block;
-  }
-
-  .ds-hamburger {
-    display: none !important;
   }
 
   .ds-overlay {

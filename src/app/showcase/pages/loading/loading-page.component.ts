@@ -7,7 +7,14 @@ import { CodeExampleComponent } from '../../shared/code-example.component';
 @Component({
   selector: 'app-loading-page',
   standalone: true,
-  imports: [PageHeaderComponent, CodeExampleComponent, LoadingComponent, SwitchComponent, InputComponent, FormsModule],
+  imports: [
+    PageHeaderComponent,
+    CodeExampleComponent,
+    LoadingComponent,
+    SwitchComponent,
+    InputComponent,
+    FormsModule,
+  ],
   templateUrl: './loading-page.component.html',
   styleUrl: './loading-page.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -25,14 +32,20 @@ export class LoadingPageComponent {
   protected readonly searchQuery = signal('');
 
   protected readonly icons = [
-    'circle_variant', 'lock_base', 'search_variant', 'settings_base', 'home_base',
-    'user_base', 'bell_base', 'star_base', 'heart_base', 'check_base'
+    'circle_variant',
+    'lock_base',
+    'search_variant',
+    'settings_base',
+    'home_base',
+    'user_base',
+    'bell_base',
+    'star_base',
+    'heart_base',
+    'check_base',
   ];
 
   protected readonly filteredIcons = computed(() =>
-    this.icons.filter(icon =>
-      icon.toLowerCase().includes(this.searchQuery().toLowerCase())
-    )
+    this.icons.filter((icon) => icon.toLowerCase().includes(this.searchQuery().toLowerCase())),
   );
 
   updateSearch(query: string): void {

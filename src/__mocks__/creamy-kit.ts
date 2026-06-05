@@ -76,9 +76,7 @@ export const CREAMY_KIT_RESOURCES = new InjectionToken<CreamyKitResources>(
   { providedIn: 'root', factory: () => CREAMY_KIT_RESOURCES_DEFAULTS },
 );
 
-export function provideCreamyKitResources(
-  config: Partial<CreamyKitResources>,
-): Provider {
+export function provideCreamyKitResources(config: Partial<CreamyKitResources>): Provider {
   return {
     provide: CREAMY_KIT_RESOURCES,
     useValue: { ...CREAMY_KIT_RESOURCES_DEFAULTS, ...config },
@@ -91,7 +89,11 @@ export abstract class BaseValueAccessor<T> {
   protected onChange: (value: T) => void = () => {};
   protected onTouched: () => void = () => {};
   abstract writeValue(value: T): void;
-  registerOnChange(fn: (value: T) => void): void { this.onChange = fn; }
-  registerOnTouched(fn: () => void): void { this.onTouched = fn; }
+  registerOnChange(fn: (value: T) => void): void {
+    this.onChange = fn;
+  }
+  registerOnTouched(fn: () => void): void {
+    this.onTouched = fn;
+  }
   setDisabledState(_: boolean): void {}
 }

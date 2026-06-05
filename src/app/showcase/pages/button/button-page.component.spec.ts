@@ -6,9 +6,11 @@ describe('ButtonPageComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [ButtonPageComponent],
-    }).overrideComponent(ButtonPageComponent, {
-      set: { imports: [], schemas: [NO_ERRORS_SCHEMA] },
-    }).compileComponents();
+    })
+      .overrideComponent(ButtonPageComponent, {
+        set: { imports: [], schemas: [NO_ERRORS_SCHEMA] },
+      })
+      .compileComponents();
   });
 
   it('creates the component', () => {

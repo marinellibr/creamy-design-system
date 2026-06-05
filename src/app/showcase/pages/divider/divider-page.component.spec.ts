@@ -6,9 +6,11 @@ describe('DividerPageComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [DividerPageComponent],
-    }).overrideComponent(DividerPageComponent, {
-      set: { imports: [], schemas: [NO_ERRORS_SCHEMA] },
-    }).compileComponents();
+    })
+      .overrideComponent(DividerPageComponent, {
+        set: { imports: [], schemas: [NO_ERRORS_SCHEMA] },
+      })
+      .compileComponents();
   });
 
   it('creates the component', () => {

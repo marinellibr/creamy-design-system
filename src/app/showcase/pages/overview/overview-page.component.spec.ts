@@ -7,9 +7,11 @@ describe('OverviewPageComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [OverviewPageComponent],
-    }).overrideComponent(OverviewPageComponent, {
-      set: { imports: [], schemas: [NO_ERRORS_SCHEMA] },
-    }).compileComponents();
+    })
+      .overrideComponent(OverviewPageComponent, {
+        set: { imports: [], schemas: [NO_ERRORS_SCHEMA] },
+      })
+      .compileComponents();
   });
 
   it('creates the component', () => {

@@ -6,9 +6,11 @@ describe('CodePageComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [CodePageComponent],
-    }).overrideComponent(CodePageComponent, {
-      set: { imports: [], schemas: [NO_ERRORS_SCHEMA] },
-    }).compileComponents();
+    })
+      .overrideComponent(CodePageComponent, {
+        set: { imports: [], schemas: [NO_ERRORS_SCHEMA] },
+      })
+      .compileComponents();
   });
 
   it('creates the component', () => {

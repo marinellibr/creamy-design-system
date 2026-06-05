@@ -6,9 +6,11 @@ describe('ImagePageComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [ImagePageComponent],
-    }).overrideComponent(ImagePageComponent, {
-      set: { imports: [], schemas: [NO_ERRORS_SCHEMA] },
-    }).compileComponents();
+    })
+      .overrideComponent(ImagePageComponent, {
+        set: { imports: [], schemas: [NO_ERRORS_SCHEMA] },
+      })
+      .compileComponents();
   });
 
   it('creates the component', () => {

@@ -6,9 +6,11 @@ describe('CalendarPageComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [CalendarPageComponent],
-    }).overrideComponent(CalendarPageComponent, {
-      set: { imports: [], schemas: [NO_ERRORS_SCHEMA] },
-    }).compileComponents();
+    })
+      .overrideComponent(CalendarPageComponent, {
+        set: { imports: [], schemas: [NO_ERRORS_SCHEMA] },
+      })
+      .compileComponents();
   });
 
   it('creates the component', () => {

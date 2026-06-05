@@ -6,9 +6,11 @@ describe('CardPageComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [CardPageComponent],
-    }).overrideComponent(CardPageComponent, {
-      set: { imports: [], schemas: [NO_ERRORS_SCHEMA] },
-    }).compileComponents();
+    })
+      .overrideComponent(CardPageComponent, {
+        set: { imports: [], schemas: [NO_ERRORS_SCHEMA] },
+      })
+      .compileComponents();
   });
 
   it('creates the component', () => {

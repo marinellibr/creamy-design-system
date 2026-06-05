@@ -12,7 +12,8 @@ import { CodeExampleComponent } from '../../shared/code-example.component';
   selector: 'app-header-page',
   standalone: true,
   imports: [
-    PageHeaderComponent, CodeExampleComponent,
+    PageHeaderComponent,
+    CodeExampleComponent,
     HeaderSearchComponent,
     HeaderTitleComponent,
     HeaderLargeTitleComponent,

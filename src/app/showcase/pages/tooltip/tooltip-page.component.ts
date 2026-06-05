@@ -8,7 +8,14 @@ import { ICON_NAMES } from '../icon/icon-catalog';
 @Component({
   selector: 'app-tooltip-page',
   standalone: true,
-  imports: [PageHeaderComponent, CodeExampleComponent, TooltipComponent, SwitchComponent, IconComponent, FormsModule],
+  imports: [
+    PageHeaderComponent,
+    CodeExampleComponent,
+    TooltipComponent,
+    SwitchComponent,
+    IconComponent,
+    FormsModule,
+  ],
   templateUrl: './tooltip-page.component.html',
   styleUrl: './tooltip-page.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -23,7 +30,7 @@ export class TooltipPageComponent {
   protected readonly ativo = signal(false);
 
   protected readonly variant = computed(() =>
-    this.ativo() ? ('contrast' as const) : ('default' as const)
+    this.ativo() ? ('contrast' as const) : ('default' as const),
   );
 
   readonly iconNames = ICON_NAMES;
@@ -41,6 +48,10 @@ export class TooltipPageComponent {
     if (!q) return this.iconNames.length;
     return this.iconNames.filter((n) => n.toLowerCase().includes(q)).length;
   });
+
+  onIconInput(event: Event): void {
+    this.onIconQueryChange((event.target as HTMLInputElement).value);
+  }
 
   onIconQueryChange(value: string): void {
     this.iconQuery.set(value);
@@ -62,6 +73,6 @@ export class TooltipPageComponent {
   }
 
   onIconInputBlur(): void {
-    setTimeout(() => this.iconInputFocused.set(false), 120);
+    this.iconInputFocused.set(false);
   }
 }

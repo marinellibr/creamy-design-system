@@ -3,9 +3,11 @@
 <section class="component-section brands-section">
   <p class="brands-intro">
     Componentes para exibir marcas consumidas do
-    <a href="https://github.com/marinellibr/creamy-kit-resources/tree/main/brands" target="_blank" rel="noopener">creamy-kit-resources</a>
-    ({{ allBrands.length }} marcas). Digite o nome para filtrar, escolha uma
-    marca e selecione o tipo e tamanho. Os snippets atualizam em tempo real.
+    <a href="https://github.com/marinellibr/creamy-kit-resources/tree/main/brands" target="_blank" rel="noopener"
+      >creamy-kit-resources</a
+    >
+    ({{ allBrands.length }} marcas). Digite o nome para filtrar, escolha uma marca e selecione o tipo e tamanho. Os
+    snippets atualizam em tempo real.
   </p>
 
   <div class="brand-explorer">
@@ -21,7 +23,7 @@
           autocomplete="off"
           spellcheck="false"
           [value]="brandQuery()"
-          (input)="onBrandQueryChange($any($event.target).value)"
+          (input)="onBrandInput($event)"
           (focus)="onBrandInputFocus()"
           (blur)="onBrandInputBlur()"
         />
@@ -32,12 +34,14 @@
             aria-label="Limpar busca"
             (mousedown)="preserveFocus($event)"
             (click)="onBrandQueryChange('')"
-          >×</button>
+          >
+            ×
+          </button>
         }
       </div>
 
       @if (brandInputFocused()) {
-        <ul class="brand-explorer__suggestions" role="listbox">
+        <ul class="brand-explorer__suggestions" role="listbox" (mousedown)="preserveFocus($event)">
           @if (brandSuggestions().length === 0) {
             <li class="brand-explorer__empty">Nenhuma marca encontrada.</li>
           } @else {
@@ -54,7 +58,10 @@
             }
             @if (brandMatchCount() > brandSuggestions().length) {
               <li class="brand-explorer__more">
-                +{{ brandMatchCount() - brandSuggestions().length }} resultado{{ brandMatchCount() - brandSuggestions().length === 1 ? '' : 's' }} a mais
+                +{{ brandMatchCount() - brandSuggestions().length }} resultado{{
+                  brandMatchCount() - brandSuggestions().length === 1 ? '' : 's'
+                }}
+                a mais
               </li>
             }
           }
@@ -99,7 +106,9 @@
             class="brand-explorer__type-button"
             [class.brand-explorer__type-button--selected]="preset.value === selectedBrandType()"
             (click)="selectBrandType(preset.value)"
-          >{{ preset.label }}</button>
+          >
+            {{ preset.label }}
+          </button>
         }
       </div>
 
@@ -125,7 +134,9 @@
               class="brand-explorer__size-preset"
               [class.brand-explorer__size-preset--selected]="preset.value === selectedBrandSize()"
               (click)="selectBrandSize(preset.value)"
-            >{{ preset.label }}</button>
+            >
+              {{ preset.label }}
+            </button>
           }
         </div>
       }
@@ -136,11 +147,19 @@
     <div class="doc-card">
       <h3>Como usar</h3>
       <ul>
-        <li>Importe <code>BrandSquareComponent</code>, <code>BrandHorizontalComponent</code> ou <code>BrandCardholderComponent</code> de <code>creamy-kit</code>.</li>
-        <li>Passe <code>brandName</code> (string, obrigatório) e <code>size</code> (small/medium/large, padrão: medium).</li>
+        <li>
+          Importe <code>BrandSquareComponent</code>, <code>BrandHorizontalComponent</code> ou
+          <code>BrandCardholderComponent</code> de <code>creamy-kit</code>.
+        </li>
+        <li>
+          Passe <code>brandName</code> (string, obrigatório) e <code>size</code> (small/medium/large, padrão: medium).
+        </li>
         <li>Os componentes carregam os SVGs dinamicamente do GitHub.</li>
-        <li>Catálogo completo no README do
-          <a href="https://github.com/marinellibr/creamy-kit-resources" target="_blank" rel="noopener">creamy-kit-resources</a>.
+        <li>
+          Catálogo completo no README do
+          <a href="https://github.com/marinellibr/creamy-kit-resources" target="_blank" rel="noopener"
+            >creamy-kit-resources</a
+          >.
         </li>
       </ul>
     </div>

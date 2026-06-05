@@ -1,9 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import {
-  AvatarIconComponent,
-  AvatarImageComponent,
-  AvatarTextComponent,
-} from 'creamy-kit';
+import { AvatarIconComponent, AvatarImageComponent, AvatarTextComponent } from 'creamy-kit';
 import { PageHeaderComponent } from '../../shared/page-header.component';
 import { CodeExampleComponent } from '../../shared/code-example.component';
 
@@ -11,7 +7,8 @@ import { CodeExampleComponent } from '../../shared/code-example.component';
   selector: 'app-avatar-page',
   standalone: true,
   imports: [
-    PageHeaderComponent, CodeExampleComponent,
+    PageHeaderComponent,
+    CodeExampleComponent,
     AvatarIconComponent,
     AvatarTextComponent,
     AvatarImageComponent,

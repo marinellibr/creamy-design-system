@@ -16,28 +16,19 @@
   <div class="color-grid">
     <div class="example-box">
       <p class="color-label">Success (Verde)</p>
-      <creamy-kit-switch
-        [(ngModel)]="successState"
-        color="var(--feedbacks-success, #2cc77a)"
-      />
+      <creamy-kit-switch [(ngModel)]="successState" color="var(--feedbacks-success, #2cc77a)" />
       <code>{{ successState() ? 'on' : 'off' }}</code>
     </div>
 
     <div class="example-box">
       <p class="color-label">Neutral (Escuro)</p>
-      <creamy-kit-switch
-        [(ngModel)]="neutralState"
-        color="var(--neutral-base, #484848)"
-      />
+      <creamy-kit-switch [(ngModel)]="neutralState" color="var(--neutral-base, #484848)" />
       <code>{{ neutralState() ? 'on' : 'off' }}</code>
     </div>
 
     <div class="example-box">
       <p class="color-label">Warning (Laranja)</p>
-      <creamy-kit-switch
-        [(ngModel)]="warningState"
-        color="var(--feedbacks-warning, #f9a825)"
-      />
+      <creamy-kit-switch [(ngModel)]="warningState" color="var(--feedbacks-warning, #f9a825)" />
       <code>{{ warningState() ? 'on' : 'off' }}</code>
     </div>
   </div>
@@ -61,8 +52,12 @@
       <h3>Como usar</h3>
       <ul>
         <li>Importe <code>SwitchComponent</code> de <code>creamy-kit</code>.</li>
-        <li>Use <code>[(ngModel)]</code> ou <code>formControl</code> para vincular o valor (tipo <code>boolean</code>).</li>
-        <li>Opcionalmente, passe <code>color</code> (CSS var ou valor direto) para customizar a cor do fundo quando ativo.</li>
+        <li>
+          Use <code>[(ngModel)]</code> ou <code>formControl</code> para vincular o valor (tipo <code>boolean</code>).
+        </li>
+        <li>
+          Opcionalmente, passe <code>color</code> (CSS var ou valor direto) para customizar a cor do fundo quando ativo.
+        </li>
         <li><strong>Default:</strong> sem <code>color</code>, usa <code>var(--primary-base)</code> (azul #128cfe).</li>
         <li><code>[disabled]</code> — bloqueia o toggle e aplica <code>aria-disabled</code>.</li>
         <li>Thumb (círculo branco) sempre 28×28px, desliza suavemente dentro de um fundo 52×32px.</li>

@@ -1,9 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import {
-  BannerCardComponent,
-  BannerComponent,
-  BannerTagComponent,
-} from 'creamy-kit';
+import { BannerCardComponent, BannerComponent, BannerTagComponent } from 'creamy-kit';
 import { PageHeaderComponent } from '../../shared/page-header.component';
 import { CodeExampleComponent } from '../../shared/code-example.component';
 
@@ -11,7 +7,8 @@ import { CodeExampleComponent } from '../../shared/code-example.component';
   selector: 'app-banner-page',
   standalone: true,
   imports: [
-    PageHeaderComponent, CodeExampleComponent,
+    PageHeaderComponent,
+    CodeExampleComponent,
     BannerComponent,
     BannerTagComponent,
     BannerCardComponent,

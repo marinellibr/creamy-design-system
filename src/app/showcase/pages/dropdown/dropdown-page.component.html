@@ -3,25 +3,49 @@
 <section class="component-section">
   <h3 class="variant-label">variant="default"</h3>
   <div class="inputs-stack">
-    <creamy-kit-dropdown title="País" placeholder="Selecione um país" helper="Onde você mora" [options]="countryOptions" />
-    <creamy-kit-dropdown class="input--focus-demo" title="Aberto (estado de foco)" placeholder="Borda 2px Background/primary" helper="Demonstração do estado de foco" [options]="countryOptions" />
-    <creamy-kit-dropdown title="Dropdown desabilitado" placeholder="Não selecionável" helper="Este campo está bloqueado" [options]="countryOptions" [disabled]="true" />
-    <creamy-kit-dropdown title="País" placeholder="Selecione um país" helper="Campo obrigatório" [options]="countryOptions" [error]="true" />
+    <creamy-kit-dropdown
+      title="País"
+      placeholder="Selecione um país"
+      helper="Onde você mora"
+      [options]="countryOptions"
+    />
+    <creamy-kit-dropdown
+      class="input--focus-demo"
+      title="Aberto (estado de foco)"
+      placeholder="Borda 2px Background/primary"
+      helper="Demonstração do estado de foco"
+      [options]="countryOptions"
+    />
+    <creamy-kit-dropdown
+      title="Dropdown desabilitado"
+      placeholder="Não selecionável"
+      helper="Este campo está bloqueado"
+      [options]="countryOptions"
+      [disabled]="true"
+    />
+    <creamy-kit-dropdown
+      title="País"
+      placeholder="Selecione um país"
+      helper="Campo obrigatório"
+      [options]="countryOptions"
+      [error]="true"
+    />
   </div>
 
   <div class="documentation">
     <div class="doc-card">
       <h3>Parâmetros</h3>
       <ul>
-        <li><code>[options]</code> — <code>{{ '{' }} label, value {{ '}' }}[]</code></li>
+        <li>
+          <code>[options]</code> — <code>{{ '{' }} label, value {{ '}' }}[]</code>
+        </li>
         <li><code>placeholder</code> — texto quando nada selecionado</li>
         <li><code>title</code> · <code>helper</code> — iguais ao Input</li>
         <li><code>[disabled]</code> · <code>[error]</code> — mesmos estados do Input</li>
       </ul>
       <p>
-        Implementa <code>ControlValueAccessor</code>. Abre ao clicar, fecha ao
-        selecionar ou clicar fora; o chevron gira e a borda fica 2px
-        Background/primary quando aberto.
+        Implementa <code>ControlValueAccessor</code>. Abre ao clicar, fecha ao selecionar ou clicar fora; o chevron gira
+        e a borda fica 2px Background/primary quando aberto.
       </p>
     </div>
   </div>

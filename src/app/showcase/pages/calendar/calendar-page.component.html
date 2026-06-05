@@ -2,23 +2,14 @@
 
 <section class="component-section">
   <div class="calendar-row">
-    <creamy-kit-calendar
-      footerLabel="Data selecionada"
-      footerValue="auto"
-      [(ngModel)]="calendarDate"
-    />
+    <creamy-kit-calendar footerLabel="Data selecionada" footerValue="auto" [(ngModel)]="calendarDate" />
     <creamy-kit-calendar
       footerLabel="Disponibilidade"
       footerValue="Agenda aberta para março"
       [(ngModel)]="calendarDate"
     />
     <creamy-kit-calendar [(ngModel)]="calendarDate" />
-    <creamy-kit-calendar
-      footerLabel="Desabilitado"
-      footerValue="auto"
-      [disabled]="true"
-      [(ngModel)]="calendarDate"
-    />
+    <creamy-kit-calendar footerLabel="Desabilitado" footerValue="auto" [disabled]="true" [(ngModel)]="calendarDate" />
   </div>
 
   <div class="documentation">
@@ -27,7 +18,9 @@
       <ul>
         <li>Navegação de mês, seleção de dia (círculo primary), emite <code>(dateChange)</code></li>
         <li><code>footerLabel</code> — título (negrito) do rodapé</li>
-        <li><code>footerValue</code> — <code>''</code> (oculto) · <code>'auto'</code> (data selecionada) · texto livre</li>
+        <li>
+          <code>footerValue</code> — <code>''</code> (oculto) · <code>'auto'</code> (data selecionada) · texto livre
+        </li>
         <li><code>[disabled]</code> — bloqueia navegação e seleção de dias</li>
       </ul>
       <p>Implementa <code>ControlValueAccessor</code> (valor = <code>Date</code>).</p>

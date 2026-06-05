@@ -1,4 +1,8 @@
-<ds-page-header label="Header" selector="creamy-kit-header-search · creamy-kit-header-title · creamy-kit-header-large-title · creamy-kit-header-profile" [code]="snippet" />
+<ds-page-header
+  label="Header"
+  selector="creamy-kit-header-search · creamy-kit-header-title · creamy-kit-header-large-title · creamy-kit-header-profile"
+  [code]="snippet"
+/>
 
 <section class="component-section">
   <div class="header-stack">
@@ -64,7 +68,12 @@
 
     <div class="header-demo">
       <span class="variant-label">profile · light</span>
-      <creamy-kit-header-profile theme="light" title="User name" subtitle="Sub-text" avatarSrc="https://i.pravatar.cc/96?img=47">
+      <creamy-kit-header-profile
+        theme="light"
+        title="User name"
+        subtitle="Sub-text"
+        avatarSrc="https://i.pravatar.cc/96?img=47"
+      >
         <button actions class="demo-action" aria-label="ação"></button>
         <button actions class="demo-action" aria-label="ação"></button>
         <button actions class="demo-action" aria-label="ação"></button>
@@ -76,7 +85,10 @@
     <div class="doc-card">
       <h3>Quatro componentes</h3>
       <ul>
-        <li><code>kit-header-search</code> — busca (<code>kit-search</code>); leading = <code>[back]</code> ou <code>avatarSrc</code></li>
+        <li>
+          <code>kit-header-search</code> — busca (<code>kit-search</code>); leading = <code>[back]</code> ou
+          <code>avatarSrc</code>
+        </li>
         <li><code>kit-header-title</code> — "Title" em linha única</li>
         <li><code>kit-header-large-title</code> — <code>subtitle</code> (small) + <code>title</code> (large) abaixo</li>
         <li><code>kit-header-profile</code> — avatar + <code>title</code> (nome) + <code>subtitle</code></li>

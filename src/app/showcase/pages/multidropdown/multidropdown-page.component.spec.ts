@@ -6,9 +6,11 @@ describe('MultidropdownPageComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [MultidropdownPageComponent],
-    }).overrideComponent(MultidropdownPageComponent, {
-      set: { imports: [], schemas: [NO_ERRORS_SCHEMA] },
-    }).compileComponents();
+    })
+      .overrideComponent(MultidropdownPageComponent, {
+        set: { imports: [], schemas: [NO_ERRORS_SCHEMA] },
+      })
+      .compileComponents();
   });
 
   it('creates the component', () => {

@@ -6,9 +6,11 @@ describe('TextboxPageComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [TextboxPageComponent],
-    }).overrideComponent(TextboxPageComponent, {
-      set: { imports: [], schemas: [NO_ERRORS_SCHEMA] },
-    }).compileComponents();
+    })
+      .overrideComponent(TextboxPageComponent, {
+        set: { imports: [], schemas: [NO_ERRORS_SCHEMA] },
+      })
+      .compileComponents();
   });
 
   it('creates the component', () => {

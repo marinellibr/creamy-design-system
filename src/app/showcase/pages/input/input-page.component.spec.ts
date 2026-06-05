@@ -6,9 +6,11 @@ describe('InputPageComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [InputPageComponent],
-    }).overrideComponent(InputPageComponent, {
-      set: { imports: [], schemas: [NO_ERRORS_SCHEMA] },
-    }).compileComponents();
+    })
+      .overrideComponent(InputPageComponent, {
+        set: { imports: [], schemas: [NO_ERRORS_SCHEMA] },
+      })
+      .compileComponents();
   });
 
   it('creates the component', () => {

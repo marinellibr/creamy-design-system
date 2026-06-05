@@ -6,9 +6,11 @@ describe('BannerPageComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [BannerPageComponent],
-    }).overrideComponent(BannerPageComponent, {
-      set: { imports: [], schemas: [NO_ERRORS_SCHEMA] },
-    }).compileComponents();
+    })
+      .overrideComponent(BannerPageComponent, {
+        set: { imports: [], schemas: [NO_ERRORS_SCHEMA] },
+      })
+      .compileComponents();
   });
 
   it('creates the component', () => {

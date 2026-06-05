@@ -162,14 +162,19 @@ describe('IconPageComponent', () => {
     expect(c.iconInputFocused()).toBe(true);
   });
 
-  it('onIconInputBlur sets iconInputFocused to false after timeout', () => {
-    jest.useFakeTimers();
+  it('onIconInputBlur sets iconInputFocused to false immediately', () => {
     const { c } = create();
     c.onIconInputFocus();
-    c.onIconInputBlur();
     expect(c.iconInputFocused()).toBe(true);
-    jest.runAllTimers();
+    c.onIconInputBlur();
     expect(c.iconInputFocused()).toBe(false);
+  });
+
+  it('onIconInput extracts value from event and updates query', () => {
+    const { c } = create();
+    const event = { target: { value: 'arrow' } } as unknown as Event;
+    c.onIconInput(event);
+    expect(c.iconQuery()).toBe('arrow');
   });
 
   it('preserveFocus calls event.preventDefault', () => {

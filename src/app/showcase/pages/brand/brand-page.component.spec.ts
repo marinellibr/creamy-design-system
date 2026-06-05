@@ -137,15 +137,19 @@ describe('BrandPageComponent', () => {
     expect(c.brandInputFocused()).toBe(true);
   });
 
-  it('onBrandInputBlur sets brandInputFocused to false after timeout', () => {
-    jest.useFakeTimers();
+  it('onBrandInputBlur sets brandInputFocused to false immediately', () => {
     const { c } = create();
     c.onBrandInputFocus();
     expect(c.brandInputFocused()).toBe(true);
     c.onBrandInputBlur();
-    expect(c.brandInputFocused()).toBe(true);
-    jest.runAllTimers();
     expect(c.brandInputFocused()).toBe(false);
+  });
+
+  it('onBrandInput extracts value from event and updates query', () => {
+    const { c } = create();
+    const event = { target: { value: 'visa' } } as unknown as Event;
+    c.onBrandInput(event);
+    expect(c.brandQuery()).toBe('visa');
   });
 
   it('preserveFocus calls event.preventDefault', () => {
