@@ -21,9 +21,7 @@ import { ChangeDetectionStrategy, Component, inject, input } from '@angular/core
         }
       </div>
       @if (code()) {
-        <button type="button" class="code-toggle" (click)="scrollToCode()">
-          ver código
-        </button>
+        <button type="button" class="code-toggle" (click)="scrollToCode()">ver código</button>
       }
     </div>
   `,

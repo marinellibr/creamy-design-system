@@ -104,14 +104,19 @@ describe('TooltipPageComponent', () => {
     expect(c.iconInputFocused()).toBe(true);
   });
 
-  it('onIconInputBlur closes dropdown after delay', () => {
-    jest.useFakeTimers();
+  it('onIconInputBlur closes dropdown immediately', () => {
     const { c } = create();
     c.iconInputFocused.set(true);
     c.onIconInputBlur();
-    jest.runAllTimers();
     expect(c.iconInputFocused()).toBe(false);
-    jest.useRealTimers();
+  });
+
+  it('onIconInput extracts value from event and updates query and icon', () => {
+    const { c } = create();
+    const event = { target: { value: 'trash_base' } } as unknown as Event;
+    c.onIconInput(event);
+    expect(c.iconQuery()).toBe('trash_base');
+    expect(c.icon()).toBe('trash_base');
   });
 
   it('preserveFocus calls preventDefault', () => {

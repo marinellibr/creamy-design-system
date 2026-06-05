@@ -15,9 +15,8 @@ import { COMPONENTS } from '../../component-registry';
     <div class="ov">
       <h1 class="ov__title">Creamy Kit — Componentes</h1>
       <p class="ov__lead">
-        Documentação viva do design system. Escolha um componente na barra
-        lateral. Os marcados com <span class="ov__chip">WIP</span> ainda não
-        têm página de demonstração.
+        Documentação viva do design system. Escolha um componente na barra lateral. Os marcados com
+        <span class="ov__chip">WIP</span> ainda não têm página de demonstração.
       </p>
 
       <div class="ov__stats">
@@ -110,7 +109,9 @@ import { COMPONENTS } from '../../component-registry';
         border-radius: 10px;
         background: #fff;
         text-decoration: none;
-        transition: border-color 0.12s ease, box-shadow 0.12s ease;
+        transition:
+          border-color 0.12s ease,
+          box-shadow 0.12s ease;
 
         &:hover {
           border-color: var(--primary-base);

@@ -8,14 +8,17 @@
         <li>Importe <code>TabBarComponent</code> e <code>TabBarItemComponent</code> de <code>creamy-kit</code>.</li>
         <li>Use <code>&lt;creamy-kit-tab-bar&gt;</code> como container.</li>
         <li>Dentro, adicione <code>&lt;creamy-kit-tab-bar-item&gt;</code> para cada aba.</li>
-        <li><strong>Inputs do TabBarItem:</strong>
+        <li>
+          <strong>Inputs do TabBarItem:</strong>
           <ul>
             <li><code>icon</code> — nome do ícone (obrigatório, 24px, branco)</li>
             <li><code>label</code> — texto opcional abaixo do ícone (12px, cor #484848)</li>
             <li><code>value</code> — identificador para a seleção (obrigatório)</li>
           </ul>
         </li>
-        <li>Use <code>[(ngModel)]</code> ou <code>formControl</code> para vincular a seleção (tipo <code>string</code>).</li>
+        <li>
+          Use <code>[(ngModel)]</code> ou <code>formControl</code> para vincular a seleção (tipo <code>string</code>).
+        </li>
         <li><strong>Estilo:</strong> altura 74px, 100% largura, border-radius 24px topo, fundo azul (#128cfe).</li>
         <li><strong>Posição:</strong> <code>fixed</code> na base da viewport, z-index 100.</li>
       </ul>
@@ -28,7 +31,9 @@
           <creamy-kit-tab-bar-item icon="settings_base" label="Settings" value="settings" />
           <creamy-kit-tab-bar-item icon="user_base" value="profile" />
         </creamy-kit-tab-bar>
-        <p class="selected-value">Selecionado: <code>{{ selected() ?? '—' }}</code></p>
+        <p class="selected-value">
+          Selecionado: <code>{{ selected() ?? '—' }}</code>
+        </p>
       </div>
     </div>
   </div>

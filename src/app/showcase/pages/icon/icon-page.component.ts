@@ -87,6 +87,10 @@ export class IconPageComponent {
     return `${ICON_BASE_URL}/${name}.svg`;
   }
 
+  onIconInput(event: Event): void {
+    this.onIconQueryChange((event.target as HTMLInputElement).value);
+  }
+
   onIconQueryChange(value: string): void {
     this.iconQuery.set(value);
   }
@@ -120,6 +124,6 @@ export class IconPageComponent {
   }
 
   onIconInputBlur(): void {
-    setTimeout(() => this.iconInputFocused.set(false), 120);
+    this.iconInputFocused.set(false);
   }
 }

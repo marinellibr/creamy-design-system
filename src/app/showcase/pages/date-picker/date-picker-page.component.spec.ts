@@ -6,9 +6,11 @@ describe('DatePickerPageComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [DatePickerPageComponent],
-    }).overrideComponent(DatePickerPageComponent, {
-      set: { imports: [], schemas: [NO_ERRORS_SCHEMA] },
-    }).compileComponents();
+    })
+      .overrideComponent(DatePickerPageComponent, {
+        set: { imports: [], schemas: [NO_ERRORS_SCHEMA] },
+      })
+      .compileComponents();
   });
 
   it('creates the component', () => {

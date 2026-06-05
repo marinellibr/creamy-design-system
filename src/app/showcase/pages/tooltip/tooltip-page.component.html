@@ -5,23 +5,14 @@
 
   <div class="playground-container">
     <div class="preview-box" [class.preview-box--variant]="ativo()">
-      <creamy-kit-tooltip
-        [text]="text()"
-        [icon]="icon() || undefined"
-        [variant]="variant()"
-      />
+      <creamy-kit-tooltip [text]="text()" [icon]="icon() || undefined" [variant]="variant()" />
     </div>
 
     <div class="controls">
       <!-- Text Input -->
       <div class="control-group">
         <span class="control-label">Texto:</span>
-        <input
-          type="text"
-          [(ngModel)]="text"
-          class="text-input"
-          placeholder="Digite o texto do tooltip"
-        />
+        <input type="text" [(ngModel)]="text" class="text-input" placeholder="Digite o texto do tooltip" />
       </div>
 
       <!-- Icon Autocomplete -->
@@ -37,7 +28,7 @@
               autocomplete="off"
               spellcheck="false"
               [value]="iconQuery()"
-              (input)="onIconQueryChange($any($event.target).value)"
+              (input)="onIconInput($event)"
               (focus)="onIconInputFocus()"
               (blur)="onIconInputBlur()"
             />
@@ -48,12 +39,14 @@
                 aria-label="Limpar ícone"
                 (mousedown)="preserveFocus($event)"
                 (click)="onIconQueryChange('')"
-              >×</button>
+              >
+                ×
+              </button>
             }
           </div>
 
           @if (iconInputFocused()) {
-            <ul class="icon-autocomplete__suggestions" role="listbox">
+            <ul class="icon-autocomplete__suggestions" role="listbox" (mousedown)="preserveFocus($event)">
               @if (iconSuggestions().length === 0) {
                 <li class="icon-autocomplete__empty">Nenhum ícone encontrado.</li>
               } @else {
@@ -71,7 +64,10 @@
                 }
                 @if (iconMatchCount() > iconSuggestions().length) {
                   <li class="icon-autocomplete__more">
-                    +{{ iconMatchCount() - iconSuggestions().length }} resultado{{ iconMatchCount() - iconSuggestions().length === 1 ? '' : 's' }} a mais
+                    +{{ iconMatchCount() - iconSuggestions().length }} resultado{{
+                      iconMatchCount() - iconSuggestions().length === 1 ? '' : 's'
+                    }}
+                    a mais
                   </li>
                 }
               }
@@ -95,8 +91,13 @@
         <li>Importe <code>TooltipComponent</code> de <code>creamy-kit</code>.</li>
         <li><strong>text:</strong> Texto exibido no tooltip (obrigatório).</li>
         <li><strong>icon:</strong> Nome do ícone opcional (ex: <code>copy_base</code>, <code>trash_base</code>).</li>
-        <li><strong>variant:</strong> <code>'default'</code> ou <code>'contrast'</code>. Default: <code>'default'</code>.</li>
-        <li><strong>Dimensões:</strong> Altura 44px, <code>width: fit-content</code> (ajusta ao conteúdo), border-radius 22px.</li>
+        <li>
+          <strong>variant:</strong> <code>'default'</code> ou <code>'contrast'</code>. Default: <code>'default'</code>.
+        </li>
+        <li>
+          <strong>Dimensões:</strong> Altura 44px, <code>width: fit-content</code> (ajusta ao conteúdo), border-radius
+          22px.
+        </li>
         <li><strong>Spacing:</strong> 8px padding left/right, 8px gap entre ícone e texto.</li>
       </ul>
     </div>

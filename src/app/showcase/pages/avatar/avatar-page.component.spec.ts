@@ -6,9 +6,11 @@ describe('AvatarPageComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [AvatarPageComponent],
-    }).overrideComponent(AvatarPageComponent, {
-      set: { imports: [], schemas: [NO_ERRORS_SCHEMA] },
-    }).compileComponents();
+    })
+      .overrideComponent(AvatarPageComponent, {
+        set: { imports: [], schemas: [NO_ERRORS_SCHEMA] },
+      })
+      .compileComponents();
   });
 
   it('creates the component', () => {

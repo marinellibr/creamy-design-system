@@ -4,11 +4,10 @@
   <h3 class="variant-label">Default (Base cinza + Variant azul)</h3>
 
   <div class="example-box">
-    <creamy-kit-radio
-      [options]="baseOptions"
-      [(ngModel)]="selected"
-    />
-    <p class="selected-value">Selecionado: <code>{{ selected() }}</code></p>
+    <creamy-kit-radio [options]="baseOptions" [(ngModel)]="selected" />
+    <p class="selected-value">
+      Selecionado: <code>{{ selected() }}</code>
+    </p>
   </div>
 
   <h3 class="variant-label">Cor customizada</h3>
@@ -16,38 +15,27 @@
   <div class="color-examples">
     <div class="example-box">
       <p class="color-label">Primary Soft</p>
-      <creamy-kit-radio
-        [options]="baseOptions"
-        [(ngModel)]="selectedCustom"
-        color="var(--primary-soft, #e8f4fe)"
-      />
-      <p class="selected-value">Selecionado: <code>{{ selectedCustom() }}</code></p>
+      <creamy-kit-radio [options]="baseOptions" [(ngModel)]="selectedCustom" color="var(--primary-soft, #e8f4fe)" />
+      <p class="selected-value">
+        Selecionado: <code>{{ selectedCustom() }}</code>
+      </p>
     </div>
 
     <div class="example-box">
       <p class="color-label">Neutral Base</p>
-      <creamy-kit-radio
-        [options]="baseOptions"
-        color="var(--neutral-base, #484848)"
-      />
+      <creamy-kit-radio [options]="baseOptions" color="var(--neutral-base, #484848)" />
     </div>
 
     <div class="example-box">
       <p class="color-label">Feedback Success</p>
-      <creamy-kit-radio
-        [options]="baseOptions"
-        color="var(--feedbacks-success, #2cc77a)"
-      />
+      <creamy-kit-radio [options]="baseOptions" color="var(--feedbacks-success, #2cc77a)" />
     </div>
   </div>
 
   <h3 class="variant-label">Desabilitado</h3>
 
   <div class="example-box">
-    <creamy-kit-radio
-      [options]="baseOptions"
-      [disabled]="true"
-    />
+    <creamy-kit-radio [options]="baseOptions" [disabled]="true" />
   </div>
 
   <div class="documentation">
@@ -55,11 +43,25 @@
       <h3>Como usar</h3>
       <ul>
         <li>Importe <code>RadioComponent</code> de <code>creamy-kit</code>.</li>
-        <li>Passe <code>options</code> com um array de <code>{{ '{' }} label, value {{ '}' }}</code>.</li>
-        <li>Use <code>[(ngModel)]</code> ou <code>formControl</code> para vincular o valor (tipo <code>string</code>, seleção única).</li>
-        <li>Opcionalmente, passe <code>color</code> (CSS var ou valor direto) para colorir ambos os ícones (base e variant).</li>
-        <li><strong>Default:</strong> sem <code>color</code>, usa <code>radio_button_base</code> cinza e <code>radio_button_variant</code> azul.</li>
-        <li><strong>Com <code>color</code>:</strong> ambos os ícones usam a mesma cor.</li>
+        <li>
+          Passe <code>options</code> com um array de <code>{{ '{' }} label, value {{ '}' }}</code
+          >.
+        </li>
+        <li>
+          Use <code>[(ngModel)]</code> ou <code>formControl</code> para vincular o valor (tipo <code>string</code>,
+          seleção única).
+        </li>
+        <li>
+          Opcionalmente, passe <code>color</code> (CSS var ou valor direto) para colorir ambos os ícones (base e
+          variant).
+        </li>
+        <li>
+          <strong>Default:</strong> sem <code>color</code>, usa <code>radio_button_base</code> cinza e
+          <code>radio_button_variant</code> azul.
+        </li>
+        <li>
+          <strong>Com <code>color</code>:</strong> ambos os ícones usam a mesma cor.
+        </li>
         <li><code>[disabled]</code> — bloqueia interação e aplica estilo desabilitado.</li>
         <li>Espaço fixo de <strong>12px</strong> entre o ícone e a label.</li>
       </ul>

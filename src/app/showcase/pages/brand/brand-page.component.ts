@@ -57,9 +57,7 @@ export class BrandPageComponent {
   readonly brandSuggestions = computed<string[]>(() => {
     const q = this.brandQuery().trim().toLowerCase();
     if (!q) return this.allBrands.slice(0, 12) as string[];
-    return this.allBrands
-      .filter((n) => n.toLowerCase().includes(q))
-      .slice(0, 12) as string[];
+    return this.allBrands.filter((n) => n.toLowerCase().includes(q)).slice(0, 12) as string[];
   });
 
   readonly brandMatchCount = computed<number>(() => {
@@ -96,6 +94,10 @@ export class BrandPageComponent {
   // ...
 })`;
 
+  onBrandInput(event: Event): void {
+    this.onBrandQueryChange((event.target as HTMLInputElement).value);
+  }
+
   onBrandQueryChange(value: string): void {
     this.brandQuery.set(value);
   }
@@ -127,6 +129,6 @@ export class BrandPageComponent {
   }
 
   onBrandInputBlur(): void {
-    setTimeout(() => this.brandInputFocused.set(false), 120);
+    this.brandInputFocused.set(false);
   }
 }

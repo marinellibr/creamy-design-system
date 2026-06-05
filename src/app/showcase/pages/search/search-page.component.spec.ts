@@ -6,9 +6,11 @@ describe('SearchPageComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [SearchPageComponent],
-    }).overrideComponent(SearchPageComponent, {
-      set: { imports: [], schemas: [NO_ERRORS_SCHEMA] },
-    }).compileComponents();
+    })
+      .overrideComponent(SearchPageComponent, {
+        set: { imports: [], schemas: [NO_ERRORS_SCHEMA] },
+      })
+      .compileComponents();
   });
 
   it('creates the component', () => {

@@ -3,9 +3,11 @@
 <section class="component-section icons-section">
   <p class="icons-intro">
     Catálogo consumido direto do
-    <a href="https://github.com/marinellibr/creamy-kit-resources/tree/main/icons" target="_blank" rel="noopener">creamy-kit-resources</a>
-    ({{ iconNames.length }} ícones). Digite o nome para filtrar, escolha um
-    ícone e troque a cor/tamanho. Os snippets atualizam em tempo real.
+    <a href="https://github.com/marinellibr/creamy-kit-resources/tree/main/icons" target="_blank" rel="noopener"
+      >creamy-kit-resources</a
+    >
+    ({{ iconNames.length }} ícones). Digite o nome para filtrar, escolha um ícone e troque a cor/tamanho. Os snippets
+    atualizam em tempo real.
   </p>
 
   <div class="icon-explorer">
@@ -21,7 +23,7 @@
           autocomplete="off"
           spellcheck="false"
           [value]="iconQuery()"
-          (input)="onIconQueryChange($any($event.target).value)"
+          (input)="onIconInput($event)"
           (focus)="onIconInputFocus()"
           (blur)="onIconInputBlur()"
         />
@@ -32,12 +34,14 @@
             aria-label="Limpar busca"
             (mousedown)="preserveFocus($event)"
             (click)="onIconQueryChange('')"
-          >×</button>
+          >
+            ×
+          </button>
         }
       </div>
 
       @if (iconInputFocused()) {
-        <ul class="icon-explorer__suggestions" role="listbox">
+        <ul class="icon-explorer__suggestions" role="listbox" (mousedown)="preserveFocus($event)">
           @if (iconSuggestions().length === 0) {
             <li class="icon-explorer__empty">Nenhum ícone encontrado.</li>
           } @else {
@@ -55,7 +59,10 @@
             }
             @if (iconMatchCount() > iconSuggestions().length) {
               <li class="icon-explorer__more">
-                +{{ iconMatchCount() - iconSuggestions().length }} resultado{{ iconMatchCount() - iconSuggestions().length === 1 ? '' : 's' }} a mais
+                +{{ iconMatchCount() - iconSuggestions().length }} resultado{{
+                  iconMatchCount() - iconSuggestions().length === 1 ? '' : 's'
+                }}
+                a mais
               </li>
             }
           }
@@ -81,7 +88,9 @@
 
       <div class="icon-explorer__meta">
         <span class="icon-explorer__name">{{ selectedIcon() }}.svg</span>
-        <a class="icon-explorer__url" [href]="selectedIconUrl()" target="_blank" rel="noopener">abrir SVG no GitHub ↗</a>
+        <a class="icon-explorer__url" [href]="selectedIconUrl()" target="_blank" rel="noopener"
+          >abrir SVG no GitHub ↗</a
+        >
       </div>
 
       <div class="icon-explorer__colors" role="group" aria-label="Cor do ícone">
@@ -105,7 +114,9 @@
             class="icon-explorer__size-preset"
             [class.icon-explorer__size-preset--selected]="preset.value === selectedIconSize()"
             (click)="selectIconSize(preset.value)"
-          >{{ preset.label }} · {{ preset.value }}px</button>
+          >
+            {{ preset.label }} · {{ preset.value }}px
+          </button>
         }
 
         <label class="icon-explorer__size-custom">
@@ -129,10 +140,19 @@
       <h3>Como usar</h3>
       <ul>
         <li>Importe <code>IconComponent</code> de <code>creamy-kit</code> no seu componente standalone.</li>
-        <li>Passe <code>name</code> (string), <code>[size]</code> (number, default 24) e <code>color</code> (qualquer valor CSS).</li>
-        <li>Internamente o SVG é carregado como <code>mask-image</code> da raw URL do GitHub e pintado via <code>background-color</code>.</li>
-        <li>Catálogo completo no README do
-          <a href="https://github.com/marinellibr/creamy-kit-resources" target="_blank" rel="noopener">creamy-kit-resources</a>.
+        <li>
+          Passe <code>name</code> (string), <code>[size]</code> (number, default 24) e <code>color</code> (qualquer
+          valor CSS).
+        </li>
+        <li>
+          Internamente o SVG é carregado como <code>mask-image</code> da raw URL do GitHub e pintado via
+          <code>background-color</code>.
+        </li>
+        <li>
+          Catálogo completo no README do
+          <a href="https://github.com/marinellibr/creamy-kit-resources" target="_blank" rel="noopener"
+            >creamy-kit-resources</a
+          >.
         </li>
       </ul>
     </div>

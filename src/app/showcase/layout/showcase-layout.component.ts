@@ -35,15 +35,17 @@ export class ShowcaseLayoutComponent {
   protected readonly groups = computed<NavGroup[]>(() => {
     const q = this.filter().trim().toLowerCase();
     const match = (c: ComponentEntry) =>
-      !q ||
-      c.label.toLowerCase().includes(q) ||
-      c.selector.toLowerCase().includes(q);
+      !q || c.label.toLowerCase().includes(q) || c.selector.toLowerCase().includes(q);
 
     return GROUP_ORDER.map((name) => ({
       name,
       items: COMPONENTS.filter((c) => c.group === name && match(c)),
     })).filter((g) => g.items.length > 0);
   });
+
+  protected onFilterInput(event: Event): void {
+    this.onFilter((event.target as HTMLInputElement).value);
+  }
 
   protected onFilter(value: string): void {
     this.filter.set(value);

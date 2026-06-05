@@ -6,9 +6,11 @@ describe('CheckboxPageComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [CheckboxPageComponent],
-    }).overrideComponent(CheckboxPageComponent, {
-      set: { imports: [], schemas: [NO_ERRORS_SCHEMA] },
-    }).compileComponents();
+    })
+      .overrideComponent(CheckboxPageComponent, {
+        set: { imports: [], schemas: [NO_ERRORS_SCHEMA] },
+      })
+      .compileComponents();
   });
 
   it('creates the component', () => {

@@ -6,9 +6,11 @@ describe('CodeExampleComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [CodeExampleComponent],
-    }).overrideComponent(CodeExampleComponent, {
-      set: { schemas: [NO_ERRORS_SCHEMA] },
-    }).compileComponents();
+    })
+      .overrideComponent(CodeExampleComponent, {
+        set: { schemas: [NO_ERRORS_SCHEMA] },
+      })
+      .compileComponents();
   });
 
   it('creates the component', () => {

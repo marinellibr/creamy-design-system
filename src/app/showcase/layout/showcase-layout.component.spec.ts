@@ -42,6 +42,13 @@ describe('ShowcaseLayoutComponent', () => {
     expect(c.filter()).toBe('button');
   });
 
+  it('onFilterInput extracts value from event and updates filter', () => {
+    const { c } = create();
+    const event = { target: { value: 'input' } } as unknown as Event;
+    c.onFilterInput(event);
+    expect(c.filter()).toBe('input');
+  });
+
   it('toggleSidebar flips sidebarOpen', () => {
     const { c } = create();
     c.toggleSidebar();

@@ -6,9 +6,11 @@ describe('OnBrandPageComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [OnBrandPageComponent],
-    }).overrideComponent(OnBrandPageComponent, {
-      set: { imports: [], schemas: [NO_ERRORS_SCHEMA] },
-    }).compileComponents();
+    })
+      .overrideComponent(OnBrandPageComponent, {
+        set: { imports: [], schemas: [NO_ERRORS_SCHEMA] },
+      })
+      .compileComponents();
   });
 
   it('creates the component', () => {

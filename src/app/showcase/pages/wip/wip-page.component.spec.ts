@@ -21,7 +21,10 @@ describe('WipPageComponent', () => {
     await TestBed.configureTestingModule({
       imports: [WipPageComponent],
       providers: [
-        { provide: ActivatedRoute, useValue: { data: of({ label: 'Test', selector: 'kit-test' }) } },
+        {
+          provide: ActivatedRoute,
+          useValue: { data: of({ label: 'Test', selector: 'kit-test' }) },
+        },
       ],
     }).compileComponents();
   });
