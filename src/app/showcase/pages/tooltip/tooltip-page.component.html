@@ -24,15 +24,60 @@
         />
       </div>
 
-      <!-- Icon Input -->
+      <!-- Icon Autocomplete -->
       <div class="control-group">
         <span class="control-label">Ícone (opcional):</span>
-        <input
-          type="text"
-          [(ngModel)]="icon"
-          class="text-input"
-          placeholder="Ex: copy_base, trash_base, settings_base"
-        />
+        <div class="icon-autocomplete">
+          <div class="icon-autocomplete__field">
+            <input
+              id="tooltip-icon-input"
+              class="icon-autocomplete__input"
+              type="text"
+              placeholder="Ex: copy_base, trash_base…"
+              autocomplete="off"
+              spellcheck="false"
+              [value]="iconQuery()"
+              (input)="onIconQueryChange($any($event.target).value)"
+              (focus)="onIconInputFocus()"
+              (blur)="onIconInputBlur()"
+            />
+            @if (iconQuery()) {
+              <button
+                type="button"
+                class="icon-autocomplete__clear"
+                aria-label="Limpar ícone"
+                (mousedown)="preserveFocus($event)"
+                (click)="onIconQueryChange('')"
+              >×</button>
+            }
+          </div>
+
+          @if (iconInputFocused()) {
+            <ul class="icon-autocomplete__suggestions" role="listbox">
+              @if (iconSuggestions().length === 0) {
+                <li class="icon-autocomplete__empty">Nenhum ícone encontrado.</li>
+              } @else {
+                @for (name of iconSuggestions(); track name) {
+                  <li
+                    class="icon-autocomplete__suggestion"
+                    role="option"
+                    [class.icon-autocomplete__suggestion--selected]="name === icon()"
+                    (mousedown)="preserveFocus($event)"
+                    (click)="selectIcon(name)"
+                  >
+                    <creamy-kit-icon [name]="name" [size]="16" color="var(--text-body)" />
+                    <span class="icon-autocomplete__suggestion-name">{{ name }}</span>
+                  </li>
+                }
+                @if (iconMatchCount() > iconSuggestions().length) {
+                  <li class="icon-autocomplete__more">
+                    +{{ iconMatchCount() - iconSuggestions().length }} resultado{{ iconMatchCount() - iconSuggestions().length === 1 ? '' : 's' }} a mais
+                  </li>
+                }
+              }
+            </ul>
+          }
+        </div>
       </div>
 
       <!-- Contrast Toggle -->
