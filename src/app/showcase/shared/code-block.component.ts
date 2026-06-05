@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, input, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, input, signal } from '@angular/core';
 
 /**
  * Bloco "ver código" reutilizável nas páginas do showcase.
@@ -17,7 +17,7 @@ import { ChangeDetectionStrategy, Component, input, signal } from '@angular/core
     }
   `,
 })
-export class CodeBlockComponent {
+export class CodeBlockComponent implements OnInit {
   /** Snippet exibido quando aberto. */
   readonly code = input<string>('');
 
