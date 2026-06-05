@@ -6,6 +6,7 @@
     <creamy-kit-code title="Código (6 dígitos)" [length]="6" />
     <creamy-kit-code title="Código (4 dígitos)" [length]="4" />
     <creamy-kit-code title="Com erro" [length]="6" [error]="true" />
+    <creamy-kit-code title="Desabilitado" [length]="6" [disabled]="true" />
   </div>
 
   <div class="documentation">
@@ -15,6 +16,7 @@
         <li><code>[length]</code> — <code>4 | 6</code> campos (32×48px)</li>
         <li><code>title</code> — mesmo título do Input Text</li>
         <li><code>[error]</code> — borda dos campos em Feedback/error</li>
+        <li><code>[disabled]</code> — bloqueia todos os campos e aplica estilo desabilitado</li>
       </ul>
       <p>
         Um caractere por campo, com avanço automático de foco ao digitar (e

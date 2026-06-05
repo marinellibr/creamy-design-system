@@ -13,9 +13,12 @@ import { CodeExampleComponent } from '../../shared/code-example.component';
 export class SearchPageComponent {
   protected readonly snippet = `<creamy-kit-search placeholder="Pesquisar…">
   <svg iconRight>...</svg>
-</kit-search>
+</creamy-kit-search>
 
 <creamy-kit-search placeholder="Compacta" [small]="true">
   <svg iconRight>...</svg>
-</kit-search>`;
+</creamy-kit-search>
+
+<!-- Desabilitado -->
+<creamy-kit-search placeholder="Desabilitado" [disabled]="true" />`;
 }

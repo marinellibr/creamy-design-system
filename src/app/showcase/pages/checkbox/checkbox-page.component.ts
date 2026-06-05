@@ -27,5 +27,8 @@ export class CheckboxPageComponent {
 <creamy-kit-checkbox [options]="options" [(ngModel)]="marcados" />
 
 <!-- sem os dividers -->
-<creamy-kit-checkbox [options]="options" [divider]="false" [(ngModel)]="marcados" />`;
+<creamy-kit-checkbox [options]="options" [divider]="false" [(ngModel)]="marcados" />
+
+<!-- desabilitado -->
+<creamy-kit-checkbox [options]="options" [disabled]="true" [(ngModel)]="marcados" />`;
 }

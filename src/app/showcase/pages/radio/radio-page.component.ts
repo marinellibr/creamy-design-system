@@ -23,7 +23,10 @@ const opcoes = [
 <creamy-kit-radio [options]="opcoes" [(ngModel)]="selecionado" />
 
 <!-- Cor customizada -->
-<creamy-kit-radio [options]="opcoes" color="var(--primary-soft)" />`;
+<creamy-kit-radio [options]="opcoes" color="var(--primary-soft)" />
+
+<!-- Desabilitado -->
+<creamy-kit-radio [options]="opcoes" [disabled]="true" />`;
 
   protected readonly baseOptions: RadioOption[] = [
     { label: 'Opção A', value: 'a' },

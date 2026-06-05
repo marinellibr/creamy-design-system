@@ -12,5 +12,6 @@ import { CodeExampleComponent } from '../../shared/code-example.component';
 })
 export class CodePageComponent {
   protected readonly snippet = `<creamy-kit-code title="Código" [length]="6" [(ngModel)]="codigo" />
-<creamy-kit-code [length]="4" [error]="true" />`;
+<creamy-kit-code [length]="4" [error]="true" />
+<creamy-kit-code title="Desabilitado" [length]="6" [disabled]="true" />`;
 }
