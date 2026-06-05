@@ -2,7 +2,10 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "./out-tsc/spec",
-    "types": ["jasmine"]
+    "types": ["jest"],
+    "paths": {
+      "creamy-kit": ["./src/__mocks__/creamy-kit.ts"]
+    }
   },
-  "include": ["src/**/*.spec.ts", "src/**/*.d.ts"]
+  "include": ["src/**/*.spec.ts", "src/**/*.ts", "src/**/*.d.ts", "setup-jest.ts"]
 }

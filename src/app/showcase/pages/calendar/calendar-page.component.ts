@@ -17,5 +17,8 @@ export class CalendarPageComponent {
   protected readonly snippet = `<creamy-kit-calendar
   footerLabel="Data selecionada"
   footerValue="auto"
-  [(ngModel)]="data" />`;
+  [(ngModel)]="data" />
+
+<!-- Desabilitado -->
+<creamy-kit-calendar [disabled]="true" [(ngModel)]="data" />`;
 }

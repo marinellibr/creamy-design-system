@@ -41,6 +41,15 @@
     </div>
   </div>
 
+  <h3 class="variant-label">Desabilitado</h3>
+
+  <div class="example-box">
+    <creamy-kit-radio
+      [options]="baseOptions"
+      [disabled]="true"
+    />
+  </div>
+
   <div class="documentation">
     <div class="doc-card">
       <h3>Como usar</h3>
@@ -51,6 +60,7 @@
         <li>Opcionalmente, passe <code>color</code> (CSS var ou valor direto) para colorir ambos os ícones (base e variant).</li>
         <li><strong>Default:</strong> sem <code>color</code>, usa <code>radio_button_base</code> cinza e <code>radio_button_variant</code> azul.</li>
         <li><strong>Com <code>color</code>:</strong> ambos os ícones usam a mesma cor.</li>
+        <li><code>[disabled]</code> — bloqueia interação e aplica estilo desabilitado.</li>
         <li>Espaço fixo de <strong>12px</strong> entre o ícone e a label.</li>
       </ul>
     </div>

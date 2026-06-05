@@ -21,5 +21,8 @@ export class DatePickerPageComponent {
   [(ngModel)]="data"
   (confirm)="salvar($event)"
   (cancel)="fechar()"
-  (closed)="fechar()" />`;
+  (closed)="fechar()" />
+
+<!-- Desabilitado -->
+<creamy-kit-date-picker title="Data" [disabled]="true" [(ngModel)]="data" />`;
 }

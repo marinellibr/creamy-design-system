@@ -8,6 +8,12 @@
       infoText="Texto informativo, alerta ou dica sobre a escolha da data"
       [(ngModel)]="calendarDate"
     />
+    <creamy-kit-date-picker
+      title="Desabilitado"
+      description="Campo bloqueado"
+      [disabled]="true"
+      [(ngModel)]="calendarDate"
+    />
   </div>
 
   <div class="documentation">
@@ -22,6 +28,7 @@
       <ul>
         <li><code>title</code> · <code>description</code> · <code>infoText</code></li>
         <li><code>confirmLabel</code> · <code>cancelLabel</code></li>
+        <li><code>[disabled]</code> — bloqueia abertura do calendário</li>
         <li>Saídas: <code>(confirm)</code> (Date), <code>(cancel)</code>, <code>(closed)</code></li>
       </ul>
       <p>Implementa <code>ControlValueAccessor</code> (valor = <code>Date</code>).</p>

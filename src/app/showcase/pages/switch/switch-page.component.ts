@@ -17,7 +17,10 @@ export class SwitchPageComponent {
 <creamy-kit-switch [(ngModel)]="ativo" />
 
 <!-- Cor customizada -->
-<creamy-kit-switch [(ngModel)]="feature" color="var(--feedbacks-success)" />`;
+<creamy-kit-switch [(ngModel)]="feature" color="var(--feedbacks-success)" />
+
+<!-- Desabilitado -->
+<creamy-kit-switch [disabled]="true" />`;
 
   protected readonly defaultState = signal(false);
   protected readonly successState = signal(false);

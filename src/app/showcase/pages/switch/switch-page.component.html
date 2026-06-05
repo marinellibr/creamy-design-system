@@ -42,6 +42,20 @@
     </div>
   </div>
 
+  <h3 class="variant-label">Desabilitado</h3>
+
+  <div class="color-grid">
+    <div class="example-box">
+      <p class="color-label">Off desabilitado</p>
+      <creamy-kit-switch [disabled]="true" />
+    </div>
+
+    <div class="example-box">
+      <p class="color-label">On desabilitado</p>
+      <creamy-kit-switch [disabled]="true" [ngModel]="true" />
+    </div>
+  </div>
+
   <div class="documentation">
     <div class="doc-card">
       <h3>Como usar</h3>
@@ -50,6 +64,7 @@
         <li>Use <code>[(ngModel)]</code> ou <code>formControl</code> para vincular o valor (tipo <code>boolean</code>).</li>
         <li>Opcionalmente, passe <code>color</code> (CSS var ou valor direto) para customizar a cor do fundo quando ativo.</li>
         <li><strong>Default:</strong> sem <code>color</code>, usa <code>var(--primary-base)</code> (azul #128cfe).</li>
+        <li><code>[disabled]</code> — bloqueia o toggle e aplica <code>aria-disabled</code>.</li>
         <li>Thumb (círculo branco) sempre 28×28px, desliza suavemente dentro de um fundo 52×32px.</li>
         <li>Suporta ARIA (<code>role=switch</code>, <code>aria-checked</code>).</li>
         <li>Respeita <code>prefers-reduced-motion</code>.</li>

@@ -1,8 +1,14 @@
 <ds-page-header label="Checkbox" selector="creamy-kit-checkbox" [code]="snippet" />
 
 <section class="component-section">
+  <h3 class="variant-label">Default</h3>
   <div class="checkbox-stack">
     <creamy-kit-checkbox [options]="checkboxOptions" [(ngModel)]="checkedItems" />
+  </div>
+
+  <h3 class="variant-label">Desabilitado</h3>
+  <div class="checkbox-stack">
+    <creamy-kit-checkbox [options]="checkboxOptions" [disabled]="true" [(ngModel)]="checkedItems" />
   </div>
 
   <div class="documentation">
@@ -17,6 +23,7 @@
       <ul>
         <li><code>[options]</code> — array de <code>{{ '{' }} label, value {{ '}' }}</code></li>
         <li><code>[divider]</code> — exibe o divider abaixo de cada opção (default <code>true</code>)</li>
+        <li><code>[disabled]</code> — bloqueia interação e aplica estilo desabilitado</li>
       </ul>
       <p>Implementa <code>ControlValueAccessor</code> (valor = <code>string[]</code>).</p>
     </div>
