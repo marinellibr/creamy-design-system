@@ -13,7 +13,7 @@ export interface ComponentEntry {
   slug: string;
   /** Nome exibido na sidebar e no título da página. */
   label: string;
-  /** Seletor Angular (ex.: `kit-button`). `—` quando não houver um único. */
+  /** Seletor Angular (ex.: `creamy-kit-button`). `—` quando não houver um único. */
   selector: string;
   /** Grupo na sidebar. */
   group: string;
@@ -35,96 +35,146 @@ export const GROUP_ORDER: readonly string[] = [
 
 export const COMPONENTS: readonly ComponentEntry[] = [
   // ----------------------------- Geral -----------------------------
-  { slug: 'button', label: 'Button', selector: 'kit-button', group: 'Geral' },
-  { slug: 'card', label: 'Card', selector: 'kit-card', group: 'Geral' },
-  { slug: 'divider', label: 'Divider', selector: 'kit-divider', group: 'Geral' },
-  { slug: 'icon', label: 'Icon', selector: 'kit-icon', group: 'Geral' },
+  { slug: 'button', label: 'Button', selector: 'creamy-kit-button', group: 'Geral' },
+  { slug: 'card', label: 'Card', selector: 'creamy-kit-card', group: 'Geral' },
+  { slug: 'divider', label: 'Divider', selector: 'creamy-kit-divider', group: 'Geral' },
+  { slug: 'icon', label: 'Icon', selector: 'creamy-kit-icon', group: 'Geral' },
   {
     slug: 'brand',
     label: 'Brand',
-    selector: 'creamy-brand-square · -horizontal · -cardholder',
+    selector: 'creamy-brand-*',
     group: 'Geral',
   },
 
   // -------------------------- Formulários --------------------------
-  { slug: 'input', label: 'Input', selector: 'kit-input', group: 'Formulários' },
-  { slug: 'password', label: 'Password', selector: 'kit-password', group: 'Formulários' },
-  { slug: 'textbox', label: 'Textbox', selector: 'kit-textbox', group: 'Formulários' },
-  { slug: 'dropdown', label: 'Dropdown', selector: 'kit-dropdown', group: 'Formulários' },
+  { slug: 'input', label: 'Input', selector: 'creamy-kit-input', group: 'Formulários' },
+  { slug: 'password', label: 'Password', selector: 'creamy-kit-password', group: 'Formulários' },
+  { slug: 'textbox', label: 'Textbox', selector: 'creamy-kit-textbox', group: 'Formulários' },
+  { slug: 'dropdown', label: 'Dropdown', selector: 'creamy-kit-dropdown', group: 'Formulários' },
   {
     slug: 'multidropdown',
     label: 'MultiDropdown',
-    selector: 'kit-multidropdown',
+    selector: 'creamy-kit-multidropdown',
     group: 'Formulários',
   },
-  { slug: 'search', label: 'Search', selector: 'kit-search', group: 'Formulários' },
-  { slug: 'checkbox', label: 'Checkbox', selector: 'kit-checkbox', group: 'Formulários' },
-  { slug: 'code', label: 'Code', selector: 'kit-code', group: 'Formulários' },
-  { slug: 'calendar', label: 'Calendar', selector: 'kit-calendar', group: 'Formulários' },
-  { slug: 'date-picker', label: 'DatePicker', selector: 'kit-date-picker', group: 'Formulários' },
-  { slug: 'radio', label: 'Radio', selector: 'kit-radio', group: 'Formulários' },
-  { slug: 'switch', label: 'Switch', selector: 'kit-switch', group: 'Formulários' },
+  { slug: 'search', label: 'Search', selector: 'creamy-kit-search', group: 'Formulários' },
+  { slug: 'checkbox', label: 'Checkbox', selector: 'creamy-kit-checkbox', group: 'Formulários' },
+  { slug: 'code', label: 'Code', selector: 'creamy-kit-code', group: 'Formulários' },
+  { slug: 'calendar', label: 'Calendar', selector: 'creamy-kit-calendar', group: 'Formulários' },
+  {
+    slug: 'date-picker',
+    label: 'DatePicker',
+    selector: 'creamy-kit-date-picker',
+    group: 'Formulários',
+  },
+  { slug: 'radio', label: 'Radio', selector: 'creamy-kit-radio', group: 'Formulários' },
+  { slug: 'switch', label: 'Switch', selector: 'creamy-kit-switch', group: 'Formulários' },
 
   // ----------------------------- Feedback -----------------------------
-  { slug: 'alert', label: 'Alert', selector: 'kit-alert · kit-snackbar', group: 'Feedback' },
+  {
+    slug: 'alert',
+    label: 'Alert',
+    selector: 'creamy-kit-alert · creamy-kit-snackbar',
+    group: 'Feedback',
+  },
   {
     slug: 'banner',
     label: 'Banner',
-    selector: 'kit-banner · kit-banner-tag · kit-banner-card',
+    selector: 'creamy-kit-banner · creamy-kit-banner-tag · creamy-kit-banner-card',
     group: 'Feedback',
   },
-  { slug: 'loading', label: 'Loading', selector: 'kit-loading', group: 'Feedback' },
-  { slug: 'progress', label: 'Progress', selector: 'kit-progress', group: 'Feedback', wip: true },
-  { slug: 'tooltip', label: 'Tooltip', selector: 'kit-tooltip', group: 'Feedback' },
+  { slug: 'loading', label: 'Loading', selector: 'creamy-kit-loading', group: 'Feedback' },
+  {
+    slug: 'progress',
+    label: 'Progress',
+    selector: 'creamy-kit-progress',
+    group: 'Feedback',
+    wip: true,
+  },
+  { slug: 'tooltip', label: 'Tooltip', selector: 'creamy-kit-tooltip', group: 'Feedback' },
 
   // ---------------------------- Navegação ----------------------------
-  { slug: 'breadcrumb', label: 'Breadcrumb', selector: 'kit-breadcrumb', group: 'Navegação' },
-  { slug: 'header', label: 'Header', selector: 'kit-header-search · …', group: 'Navegação' },
+  {
+    slug: 'breadcrumb',
+    label: 'Breadcrumb',
+    selector: 'creamy-kit-breadcrumb',
+    group: 'Navegação',
+  },
+  {
+    slug: 'header',
+    label: 'Header',
+    selector:
+      'creamy-kit-header-search · creamy-kit-header-title · creamy-kit-header-large-title · creamy-kit-header-profile',
+    group: 'Navegação',
+  },
   {
     slug: 'pagination',
     label: 'Pagination',
-    selector: 'kit-pagination',
+    selector: 'creamy-kit-pagination',
     group: 'Navegação',
     wip: true,
   },
-  { slug: 'tab-bar', label: 'TabBar', selector: 'kit-tab-bar', group: 'Navegação' },
-  { slug: 'tabs', label: 'Tabs', selector: 'kit-tabs', group: 'Navegação', wip: true },
+  {
+    slug: 'tab-bar',
+    label: 'TabBar',
+    selector: 'creamy-kit-tab-bar · creamy-kit-tab-bar-item',
+    group: 'Navegação',
+  },
+  { slug: 'tabs', label: 'Tabs', selector: 'creamy-kit-tabs', group: 'Navegação', wip: true },
 
   // ------------------------ Exibição de dados ------------------------
   {
     slug: 'avatar',
     label: 'Avatar',
-    selector: 'kit-avatar-icon · -text · -image',
+    selector: 'creamy-kit-avatar-icon · creamy-kit-avatar-text · creamy-kit-avatar-image',
     group: 'Exibição de dados',
   },
-  { slug: 'image', label: 'Image', selector: 'kit-image', group: 'Exibição de dados' },
-  { slug: 'list', label: 'List', selector: 'kit-list', group: 'Exibição de dados', wip: true },
+  { slug: 'image', label: 'Image', selector: 'creamy-kit-image', group: 'Exibição de dados' },
+  {
+    slug: 'list',
+    label: 'List',
+    selector: 'creamy-kit-list',
+    group: 'Exibição de dados',
+    wip: true,
+  },
   {
     slug: 'product-card',
     label: 'ProductCard',
-    selector: 'kit-product-card',
+    selector: 'creamy-kit-product-card',
     group: 'Exibição de dados',
     wip: true,
   },
   {
     slug: 'shortcut',
     label: 'Shortcut',
-    selector: 'kit-shortcut',
+    selector: 'creamy-kit-shortcut',
     group: 'Exibição de dados',
     wip: true,
   },
-  { slug: 'tag', label: 'Tag', selector: 'kit-tag', group: 'Exibição de dados', wip: true },
+  {
+    slug: 'tag',
+    label: 'Tag',
+    selector: 'creamy-kit-tag',
+    group: 'Exibição de dados',
+    wip: true,
+  },
 
   // ----------------------------- Overlays -----------------------------
-  { slug: 'modal', label: 'Modal', selector: 'kit-modal', group: 'Overlays', wip: true },
-  { slug: 'sheets', label: 'Sheets', selector: 'kit-sheets', group: 'Overlays', wip: true },
+  { slug: 'modal', label: 'Modal', selector: 'creamy-kit-modal', group: 'Overlays', wip: true },
+  {
+    slug: 'sheets',
+    label: 'Sheets',
+    selector: 'creamy-kit-sheets',
+    group: 'Overlays',
+    wip: true,
+  },
 
   // ---------------------------- Tipografia ----------------------------
-  { slug: 'text', label: 'Text', selector: 'kit-text', group: 'Tipografia' },
+  { slug: 'text', label: 'Text', selector: 'creamy-kit-text', group: 'Tipografia' },
   {
     slug: 'text-link',
     label: 'TextLink',
-    selector: 'kit-text-link',
+    selector: 'creamy-kit-text-link',
     group: 'Tipografia',
     wip: true,
   },
