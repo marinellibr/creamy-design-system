@@ -1,7 +1,14 @@
 <div class="ds-shell" [class.ds-sidebar--open]="sidebarOpen()">
   <header class="ds-mobile-header">
     <creamy-kit-header-title title="🍦 Creamy Kit">
-      <button actions (click)="toggleSidebar()" class="ds-mobile-header__hamburger" aria-label="Toggle sidebar">
+      <button
+        actions
+        (click)="toggleSidebar()"
+        class="ds-mobile-header__hamburger"
+        [class.is-open]="sidebarOpen()"
+        [attr.aria-label]="sidebarOpen() ? 'Fechar menu' : 'Abrir menu'"
+        [attr.aria-expanded]="sidebarOpen()"
+      >
         <span></span>
         <span></span>
         <span></span>
