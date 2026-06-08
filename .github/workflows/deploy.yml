@@ -30,8 +30,11 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Check Angular CLI version
+        run: node_modules/.bin/ng version || true
+
       - name: Build
-        run: npm run build
+        run: node_modules/.bin/ng build --configuration production 2>&1
 
       - name: SPA 404 fallback
         run: cp dist/creamy-design-system/browser/index.html dist/creamy-design-system/browser/404.html
